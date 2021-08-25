@@ -2,6 +2,88 @@
 <html>
     <head>
         <style>
+            h1{
+                font-family: Arial, Helvetica, sans-serif;
+                color: darkmagenta;
+                text-align: center;
+            }
+
+            p{
+                font-weight: bold;
+            }
+
+            table, tr, td{
+                border: 1px solid black;
+            }
+
+            tr:hover {
+                font-size:30px
+            }
+
+            .shapesTable {
+                margin-left: 20%;
+            }
+
+            .shapeColor{
+                background-color: turquoise;
+            }
+
+            .circle{
+                color: red;
+                text-align: center;
+            }
+
+            .square{
+                color: green;
+                text-align: center;
+            }
+
+            .triangle{
+                color: blue;
+                text-align: center;
+            }
+
+            .numberTable{
+                margin-left: 35% ;
+                width: 100px;
+            }
+
+            .numberColor{
+                background-color: lightyellow;
+                text-align: center;
+                font-family: 'Courier New', Courier, monospace;
+            }
+
+            .colorTable{
+                margin-left: 45%;
+            }
+
+            .colorTableFill {
+                background-color: black;
+            }
+
+            .blue{
+                color: blue;
+                text-align: center;
+            }
+
+            .green{
+                color: green;
+                text-align: center;
+            }
+
+            .yellow{
+                color: yellow;
+                text-align: center;
+            }
+
+            .zoom{
+
+            }
+
+
+
+
         </style>
     </head>
 
@@ -10,8 +92,8 @@
         <h1> Learn About Shapes, Colors and Numbers </h1>
         
         <div>
-            <p> Shapes </p>
-            <table>
+            <p class="shapesTable"> Shapes </p>
+            <table class="shapesTable">
                 <tr> 
                     <td>
                         <img src="images/circle.jpg" heigth="100" width="100"> 
@@ -23,17 +105,17 @@
                         <img src="images/triangle.jpg" heigth="100" width="100"> 
                     </td>
                 </tr>
-                <tr>
-                    <td> Circle </td>
-                    <td> Square </td>
-                    <td> Triangle </td>
+                <tr class="shapeColor">
+                    <td class="circle"> Circle </td>
+                    <td class="square"> Square </td>
+                    <td class="triangle"> Triangle </td>
                 </tr>
             </table>
         </div>
         <br>
         <div>
-            <p> Numbers </p>
-            <table>
+            <p class="numberTable"> Numbers </p>
+            <table class="numberTable">
                 <tr> 
                     <td>
                         <img src="images/one.jpg" heigth="100" width="100"> 
@@ -45,7 +127,7 @@
                         <img src="images/three.jpg" heigth="100" width="100"> 
                     </td>
                 </tr>
-                <tr>
+                <tr class="numberColor">
                     <td> One </td>
                     <td> Two </td>
                     <td> Three </td>
@@ -54,8 +136,8 @@
         </div>
         <br>
         <div>
-            <p> Colours</p>
-            <table >
+            <p class="colorTable"> Colours</p>
+            <table class='colorTable'>
                 <tr> 
                     <td>
                         <img src="images/blue.jpg" heigth="100" width="100"> 
@@ -67,10 +149,10 @@
                         <img src="images/yellow.jpg" heigth="100" width="100"> 
                     </td>
                 </tr>
-                <tr>
-                    <td> Blue </td>
-                    <td> Green </td>
-                    <td> Yellow </td>
+                <tr class="colorTableFill">
+                    <td class="blue"> Blue </td>
+                    <td class="green"> Green </td>
+                    <td class="yellow"> Yellow </td>
                 </tr>
             </table>
         </div>
