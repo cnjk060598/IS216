@@ -1,0 +1,44 @@
+h1{
+    background-color: #4b6e24;
+    color: rgb(43, 24  , 219);
+}
+
+h2{
+    background-color: #4b6e24;
+    color: rgb(43, 24  , 219);
+}
+/* Write a standardise code, using commas to seperate different selectors */
+
+h1, h2 {
+    background-color: #4b6e24;
+    color: rgb(43, 24  , 219);
+}
+
+/* apply to all elements with class awesome */
+
+p {
+    color: purple
+}
+
+.awesome{
+    color: red;
+}
+
+/* para 4 and 5 to have a border, dotted and 5px */
+.dotted{
+    border-color: blue;
+    border-width: 5px;
+    border-style: dotted;
+}
+
+.textcenter{
+    text-align: center;
+}
+
+#over{
+    color: rgb(95, 145, 110);
+    font-style: italic;
+}
+
+
+

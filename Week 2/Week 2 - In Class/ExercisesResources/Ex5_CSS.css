@@ -1,0 +1,24 @@
+h2{
+    color: blue;
+}
+
+h3{
+    font-style: italic;
+}
+
+table, tr, th, td{
+    border: 1px solid black;
+    width: max-content;
+}
+
+.cellbold{
+    font-weight: bold;
+}
+
+.greenbox{
+    background-color: lightgreen;
+}
+
+.redbox {
+    background-color: lightcoral;
+}
