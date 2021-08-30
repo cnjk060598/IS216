@@ -13,9 +13,14 @@ body{
 }
 
 .header-box{
-    background-color: black;
-    border: 1px solid blue;
-    color: white;
+    background-color: purple;
+
+    border: 10px blue solid;
+    border-width: 5px;
+    border-top-style: dotted;
+    border-bottom-style: dotted;
+
+    color: pink;
     padding: 20px;
     font-family: Arial, Helvetica, sans-serif;
     margin-bottom: 10px;
