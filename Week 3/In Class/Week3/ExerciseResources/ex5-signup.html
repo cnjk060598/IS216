@@ -2,6 +2,7 @@
 <head>
 
     <!-- Add code here -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 
     <style>
         body {  
@@ -12,6 +13,49 @@
 <body>
 
    <!-- Add code here -->
+   <div class="container" style="background-color: rgb(209, 205, 205); text-align: center;">
+        <div class="row">
+            <div class="col"></div>
+            <div class="col-6 jumbotron text-center">
+                <h3>Sign Up</h3>
+                <p>Please provide your name, email, and password</p>
+            </div>
+            <div class="col"></div>
+        </div>
+    </div>
+
+    <div class="container"> 
+        <div class="row"> 
+            <div class="col"></div> 
+            <div class="col-6"> 
+                <form>
+                  <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Name">
+                  </div>
+                  <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Email">
+                  </div>
+                  <div class="form-group">
+                    <label for="pwd">Password</label>
+                    <input type="password" class="form-control" id="pwd" name="password" placeholder="Password">
+                  </div>
+                  <div class="form-group">
+                      <label for="cpassword">Confirm Password</label>
+                      <input type="password" class="form-control" id="cpassword" name="cpassword" placeholder="Confirm Password">
+                  </div>
+
+                  <div class="text-center"><button type="submit" class="btn btn-primary">Submit</button></div>
+                  
+                </form>
+            </div>
+            <div class="col"></div>     
+        </div> 
+    </div>
+
+
+
 
     
 </body>
