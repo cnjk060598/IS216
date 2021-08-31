@@ -82,3 +82,19 @@ If each coloumn has an idicative number of 6, it will create a new row with 12 c
 
 
 
+Deep dive - card 
+
+
+Deep Dive - Navigation and Spacing 
+
+To set margins - search for spacings 
+
+- my-4 
+    - m: margin
+    - y: Top and bottom 
+    - 4: Size 
+
+Navigation: 
+<nav class="nav justify-content-center nav-pills flex-column flex-lg-row">
+
+
