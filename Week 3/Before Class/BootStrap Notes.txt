@@ -12,6 +12,7 @@ What is Bootstrap?
 
 Bootstrap.com 
 - Documentation 
+    - many many different tools
     - Typography 
     - button 
 
@@ -97,4 +98,42 @@ To set margins - search for spacings
 Navigation: 
 <nav class="nav justify-content-center nav-pills flex-column flex-lg-row">
 
+
+
+Week 3: Notes
+
+What is the default margin for box modals? 
+- use developer tool to check 
+    - parent division: <body> 
+    - Default Margin: 8px 
+
+Universal Selector: 
+    - * means all (* is selector)
+    - Remove default padding and margin 
+        - Padding: 0
+        - margin: 0 
+
+        * {
+            margin: 0;
+            padding: 0; 
+
+        }
+
+- margin-bottom: adding spaces to seperate the boxes
+- Collasping margin: when you overlay two elements and add margins to 2 boxes, collasping margin occurs 
+    - Main Principal: CSS will take the larger margins out of the two margins indicated. 
+
+How to make image move to the right of the webpage? (Text will be wrapped around the image)
+without float, the text will be rendered below the image.
+
+img {
+    float: right 
+}
+
+- if you put two div, it will become two rows
+- display: flex 
+    - Use when you want to put two divisions side by side
+
+When you use #ID selector, it is more specific than an element selector
+    - ID is more specific 
 

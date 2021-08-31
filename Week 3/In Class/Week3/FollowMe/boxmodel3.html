@@ -12,6 +12,11 @@
             float: left;
         }
 
+        .parent {
+            display: flex;
+            align-items: center;
+        }
+
     </style>
 
 </head>
@@ -19,11 +24,24 @@
     
     <h1>Krazy Fan</h1>
 
-    <p>
-        <img src="images/hyunbin.jpg" style="width: 200px; margin: 20px;">
+    <div class="parent">
 
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus eius dolore in, ad ratione reiciendis exercitationem fuga cupiditate nulla porro. Natus odit maiores explicabo similique laboriosam, iusto sint suscipit tempore. Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus eius dolore in, ad ratione reiciendis exercitationem fuga cupiditate nulla porro. Natus odit maiores explicabo similique laboriosam, iusto sint suscipit tempore. Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus eius dolore in, ad ratione reiciendis exercitationem fuga cupiditate nulla porro. Natus odit maiores explicabo similique laboriosam, iusto sint suscipit tempore.
-    </p>
+        <div class="child"> 
+            <img src="images/hyunbin.jpg" style="width: 200px; margin: 20px;">
+        </div>
+
+        <div class="child">
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus eius dolore in, ad ratione reiciendis exercitationem fuga cupiditate nulla porro. Natus odit maiores explicabo similique laboriosam, iusto sint suscipit tempore. Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus eius dolore in, ad ratione reiciendis exercitationem fuga cupiditate nulla porro. Natus odit maiores explicabo similique laboriosam, iusto sint suscipit tempore. Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus eius dolore in, ad ratione reiciendis exercitationem fuga cupiditate nulla porro. Natus odit maiores explicabo similique laboriosam, iusto sint suscipit tempore.
+            </p>
+
+        </div>
+
+
+
+    </div>
+
+    
 
 </body>
 </html>
