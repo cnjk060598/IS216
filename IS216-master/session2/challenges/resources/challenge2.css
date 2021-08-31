@@ -1,0 +1,76 @@
+#main-header{
+    background-color: yellow;
+    color: blue;
+}
+
+body{
+    background-color: lavender;
+    /* To fill up the white spaces*/
+    margin: 0;
+    padding: 0;
+}
+
+#navigation-bar{
+    background-color: grey;
+    color: white;
+}
+
+#top-content{
+    background-color: #CD7F32;
+    background-image: url("./images/hyunbin_bg.jpg");
+    background-repeat: no-repeat;
+    background-position: top center;
+    width: auto;
+    min-height: 500px; /* Set the minimum height */
+    
+    
+}
+
+.topcontenth1{
+    color: white;
+    text-align: center;
+    font-size: 50px;
+}
+
+li{
+    display: inline;  /* to make the options horizontal */
+    padding-left: 30px;
+}
+
+.box{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    width: 100%;
+    padding: 15px;
+}
+
+ #main-content{
+    background-color: lavender;
+    float: left;
+    width: 70%;
+    padding: 0 30px;
+ }
+
+ #side-bar{
+    background-color: forestgreen;
+    color: white;
+    width: 30%;
+    padding: 10px;
+    border: solid 1px;
+    float: right;
+ }
+
+
+ #main-footer{
+     background-color: #28282B;
+     color: white;
+     text-align: center;
+     padding: 5px;
+     margin-top: 20px;
+
+ }
+
+ .testing{
+     border: 1px solid black;
+     /* margin-right: 60%; */
+ }

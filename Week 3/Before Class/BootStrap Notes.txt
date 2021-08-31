@@ -1,0 +1,84 @@
+What is Bootstrap? 
+
+- Popular HTML, CSS and Javascript framework for developing responsive, mobile-first websites 
+- Originally developed by Twitter 
+- Why use Bootstrap for front-end developement? 
+    - Faster and Easier developement 
+    - Provides design templates for forms, buttons, tables, typography, navigation, modals, image, carousels 
+    - Responsive CSS adjusts to devices of different screen sizes 
+    - Browser compatibility 
+
+
+
+Bootstrap.com 
+- Documentation 
+    - Typography 
+    - button 
+
+Grid Systems in Bootstrap 
+- Containers 
+    - Forms the foundation for all the other components and utilities that we will be learning for IS216 
+
+
+Deep Dives Containers:
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+Document: Layout - Overview / Containers 
+.container: Sets a max-width at each responsive break points
+    - (min-width: 576px)
+    - (min-width: 768px)
+    - (min-width: 992px)
+    - (min-width: 1200px)
+.container-fluid: which is width: 100% at all breakpoints 
+
+Document: Utilities - Colors/Background color 
+
+
+Viewport: Refers to users visible areas of the webpages. Can be physical mobile devices or computer screens. Screen size will varies from device to device 
+Width=Device Width: We are telling the web browser to use the width of the device screens 
+initial-scale=1: Controls initial zoom level, when the page is first loaded by the web browser
+CDN: stands for content delivery network 
+
+Inspect Elements: 
+- Open up Developer tools 
+
+
+
+Deep Dive: GRID
+- Unlimited number of roles                                                     
+- A row can container up to a maximum of 12 columns 
+- You do not have to use up all of the grid columns
+- If you have 3 columns, css will divide 12 by 3 and each area has 4 grid columns 
+- <div class="col-sm-2">
+    - Rendering how many grid you want for that area 
+
+        <div class="col-sm-2">
+            Area 1
+        </div>
+        <div class="col-sm-4">                
+            Area 2
+        </div>
+        <div class="col-sm-6">
+            Area 3
+        </div>
+
+If each coloumn has an idicative number of 6, it will create a new row with 12 coloumns and split it up to 6-6:
+
+        <div class="row" style="background-color: pink; margin-top: 20px;">
+            <div class="col-sm-6">
+              Area 1
+            </div>
+            <div class="col-sm-6">
+              Area 2
+            </div>
+            <div class="col-sm-6">
+              Area 3
+            </div>
+            <div class="col-sm-6">
+                Area 4
+            </div>
+        </div>
+
+
+
