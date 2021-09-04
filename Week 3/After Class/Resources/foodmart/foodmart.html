@@ -22,63 +22,167 @@
 
 <body>
 
-
-    <h1> Welcome to Food Mart </h1>
-
-
-
-
-    Cooked Food
-
-    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores perspiciatis labore illo
-    pariatur qui, quod, consequuntur, perferendis iure explicabo et tenetur quae non inventore
-    veritatis repellat eius laborum unde eaa
-
-    Burger
-    Burger. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-    Portion
-    Large
-    Medium
-    Small
-    Quantity
-    Take Away?
-    Yes
-    No
-    <button>Add</button>
-    Chicken Rice</h5>
-    Chicken Rice. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-    Portion
-    Large
-    Medium
-    Small
-    Quantity
-    Take Away?
-    Yes
-    No
-    <button>Add</button>
-    Noodle</h5>
-    Noodle. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-    Portion
-    Large
-    Medium
-    Small
-    Quantity
-    Take Away?
-    Yes
-    No
-    <button>Add</button>
-
-    <button>Check Out</button>
-
-    Home
-    FAQ
-    Contact Us
+    <div class="container-fluid mt-3 mb-3" style="background: url(./images/fruit.jpg); border: 1px solid red;">
+        <p class="display-1 text-center"> Welcome to Food Mart </p>
+    </div>
 
 
-    Food Mart 2020
+    <div class="container-fluid p-3 mb-2 bg-warning text-dark">
+
+        <div class="container text-center" style="color: white;">
+            <p>Cooked Food</p>
+            <p style="font-size: 10px;""> 
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores perspiciatis labore illo
+                pariatur qui, quod, consequuntur, perferendis iure explicabo et tenetur quae non inventore
+                veritatis repellat eius laborum unde eaa
+            </p>
+        </div>
+    </div>
+
+    <!-- Add a card -->
+
+    <div class="container-fluid bg-warning">
+
+        <div class="row">
+      
+          <div class="col-md-4">
+      
+            <!--Add a card-->
+      
+            <div class="card" style="width: 18rem;">
+              <img src="./images/burger.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title text-center" style="color: red;">Burger</h5>
+                <p class="card-text text-center" style="color: blue;">Burger. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <!--Portion-->
+                <label for="exampleFormControlInput1" class="form-label">Portion:</label>
+                <select class="form-select" aria-label="Default select example">
+                    <option selected value="1">Large</option>
+                    <option value="2">Medium</option>
+                    <option value="3">Small</option>
+                </select>
+
+                <!--Quantity-->
+                <div class="mb-3">
+                    <label for="exampleFormControlInput2" class="form-label">Quantity</label>
+                    <input type="email" class="form-control" id="exampleFormControlInput2" placeholder="Input Quantity">
+                </div>
+
+                <!--TakeAway-->
+                <label for="exampleFormControlInput3" class="form-label">Portion:</label>
+                <select class="form-select" aria-label="Default select example">
+                    <option selected value="1">Yes</option>
+                    <option value="2">No</option>
+                </select>
 
 
 
+                <a href="#" class="btn btn-primary">Add</a>
+              </div>
+            </div>
+      
+          </div>
+      
+      
+          <div class="col-md-4">
+      
+            <!--Add a card-->
+      
+            <div class="card" style="width: 18rem;">
+              <img src="./images/chickenrice.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Chicken Rice</h5>
+                <p class="card-text">Chicken Rice. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <!--Portion-->
+                <label for="exampleFormControlInput1" class="form-label">Portion:</label>
+                <select class="form-select" aria-label="Default select example">
+                    <option selected value="1">Large</option>
+                    <option value="2">Medium</option>
+                    <option value="3">Small</option>
+                </select>
+
+                <!--Quantity-->
+                <div class="mb-3">
+                    <label for="exampleFormControlInput2" class="form-label">Quantity</label>
+                    <input type="email" class="form-control" id="exampleFormControlInput2" placeholder="Input Quantity">
+                </div>
+
+                <!--TakeAway-->
+                <label for="exampleFormControlInput3" class="form-label">Portion:</label>
+                <select class="form-select" aria-label="Default select example">
+                    <option selected value="1">Yes</option>
+                    <option value="2">No</option>
+                </select>
+
+
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+      
+          </div>
+      
+      
+          <div class="col-md-4">
+      
+            <!--Add a card-->
+      
+            <div class="card" style="width: 18rem;">
+              <img src="./images/noodle.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Noodles</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <!--Portion-->
+                <label for="exampleFormControlInput1" class="form-label">Portion:</label>
+                <select class="form-select" aria-label="Default select example">
+                    <option selected value="1">Large</option>
+                    <option value="2">Medium</option>
+                    <option value="3">Small</option>
+                </select>
+
+                <!--Quantity-->
+                <div class="mb-3">
+                    <label for="exampleFormControlInput2" class="form-label">Quantity</label>
+                    <input type="email" class="form-control" id="exampleFormControlInput2" placeholder="Input Quantity">
+                </div>
+
+                <!--TakeAway-->
+                <label for="exampleFormControlInput3" class="form-label">Portion:</label>
+                <select class="form-select" aria-label="Default select example">
+                    <option selected value="1">Yes</option>
+                    <option value="2">No</option>
+                </select>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+      
+          </div>
+      
+        </div> 
+    </div>
+
+    <div class="container-fluid text-center bg-warning">
+        <button type="button" class="btn btn-success">Success</button>
+    </div>
+
+
+    <!--- Navigation Bar -->
+    <div class="container-fluid mt-3">
+        <ul class="nav justify-content-center">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">FAQ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact Us</a>
+            </li>
+          </ul>
+    </div>
+
+    <div class="container-fluid text-center" style="background: grey;">
+        Food Mart 2020
+    </div>
 
 
 
