@@ -16,6 +16,91 @@
 <body>
 
     <!-- Add code here -->
+    <!---Introductory Info -->
+    <div class="container-fluid text-center p-3  bg-light text-dark">
+        Introductory Info
+    </div>
+
+    <!---Second container-->
+    <div class="container-fluid text-center bg-success p-2 text-white bg-opacity-75">
+
+        <p class="display-5"> <strong>Today's News</strong></p>
+        <p>What a <u>Nice</u> Layout</p>
+
+    </div>
+
+    <!--Thid container - navigation bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid bg-dark">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link active" aria-current="page" href="#" style="color: white;">Link</a>
+              <a class="nav-link" href="#" style="color: white;">Link</a>
+              <a class="nav-link" href="#" style="color: white;">Link</a>
+              <a class="nav-link" href="#" style="color: white;">Link</a>
+            </div>
+          </div>
+        </div>
+    </nav>
+
+    <!---Main Container-->
+
+    <div class="container-fluid" style="display: flex;">
+
+        <!--First container-->
+        <div class="container" style="border: 1px solid red; background-color: lightgray;">
+            <p class="display-5"> <strong>Author</strong> </p>
+            <img src="./img/journalist.png" style="width: 10%;">
+            <p style="font-size: 10px;">Some text about me in culpa qui officia  desernut mollit anim...</p>
+
+            <p class="display-5"> <strong>More News</strong> </p>
+            <p style="font-size: 10px;">Lorem ipsum dolor sit amet.</p>
+
+            <!--Inserting card-->
+            <div class="card" style="width: 10rem;">
+                <img src="./img/thumb_news.png" class="card-img-top" alt="...">
+            </div>
+
+            <!--Inserting card-->
+            <div class="card" style="width: 10rem;">
+                <img src="./img/thumb_news.png" class="card-img-top" alt="...">
+            </div>
+
+            <!--Inserting card-->
+            <div class="card" style="width: 10rem;">
+                <img src="./img/thumb_news.png" class="card-img-top" alt="...">
+            </div>
+
+
+
+
+        </div>
+        
+
+        <!--Second container within the main container-->
+        <div class="container" style=" border: 1px solid green; width: 50%;">
+            <p class="display-5"><strong>Title Heading</strong></p>
+            <p>Title Description, Aug 19, 2020</p>
+
+            <div style="border: 1px solid black; width: fit-content;"> 
+                <img src="./img/news.png" style='width:70%'>
+            </div>
+
+            <p>Some text ...</p>
+            <p style="font-size: 15px;"> Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+
+            <p class="display-5"><strong>Title Heading</strong></p>
+            <p>Title Description, Aug 19, 2020</p>
+
+            <p class='bg-warning p-5' style="border-radius: 5%;">Image</p>
+            <p>Some text ...</p>
+            <p style="font-size: 15px;"> Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+        </div>
+
+    </div>
 
     <!-- Bundled Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
