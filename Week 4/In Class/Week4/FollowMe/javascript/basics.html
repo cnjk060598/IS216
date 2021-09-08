@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+d<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -11,20 +11,53 @@
     <script>
 
         // 1. Data types
-        
+
+        // JS
+
+        var name="Donald Trump"
+        let name="Donald Trump"
+        let age = 77
+        let handsome = false
+
+        alert(name) //Webpage will show a textbox 
+        console.log(name) // for debugging > developer tool > console 
+        console.log(
+            typeof(name) // will show you the datatype
+        )
+
 
 
         // 2. String concatenation
         
+        let str = name + "is" + age + "years old"
 
 
         // 3. Output (Debugging)
         
+        let input_age = prompt("What is your age")
+        console.log(input_age)
+
+        let years_passed = prompt("What many years passed?")
+
+        let new_age = number(input_age) + number(years_passed)
+        alert("You are now" + new_age)
 
 
         // 4. Conditional statements
-        
+        let age = prompt("What is your age?") 
+        age = number(age)
 
+        if ( age < 19) {
+            alert("Grow up and come back")
+        }
+
+        else if( age < 27 ){
+            alert("Lets go out")
+        }
+
+        else {
+            alert( "Bye bye uncle")
+        }
 
         // 5. prompt
         
@@ -33,9 +66,46 @@
         // 6. Loops
         let drinks = [ 'hite', 'cass', 'jinro', 'jim beam', 'jack daniel', 'captain morgan']
 
+        for( drink of drinks){
+            alert(drink)
+        }
+
+        // this will outout the index of the array 
+        for( drink of drinks){
+            alert(drink)
+        }
         
+        let array_size = drinks.length
+        for (i = 0; i < array_size, i++){
+            console.log(
+                drinks[i]
+            )
+
+        let counter = 0 
+
+        while ( counter < array_size){
+            console.log(drinks[counter])
+            counter ++
+        }
+
 
         // 7. Function
+        function shouldwegoout(age){
+            if(age< 19){
+                return "Grow up"
+            }
+            else if (age < 27){
+                return "ok "
+            }
+            else {
+                return "Bye"
+            }
+        }
+
+
+        let input_age = promt("What is your age")
+        let result = shouldwegoout(input_age)
+        alert(result)
         
 
         

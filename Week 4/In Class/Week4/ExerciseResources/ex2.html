@@ -11,11 +11,40 @@
 
 	<script>
         function showme() {
-            console.log(5 + "34");
-            console.log(5 - "4");
+            console.log(5 + "34");               //ans: 534 (if the first number is bigger than the second number, than JS will convert it into a string)
+            console.log(5 - "4");                //ans: 1   (if the first number is bigger than the second number, than JS will convert it into a  NUMBER type)
+            console.log(10%5)                    // ans: 0
+            console.log(5%10)                    // 5
+            console.log("Java" + "Script")       // "Java Script"   Type = String
+            console.log(" " + " ")               // "  " (Will be blank in the console)
+            console.log(" " + 0)                 // " 0"            Type = string 
+            console.log(true + true)            // true   (will return 2, one true equates to 1, hence 2 trues )
+            console.log(true + false)           // true   (will return 1, cause there is one true)
+            console.log(false - true)           // false  (returns -1 - ASK WHY)
+            console.log(3-4)                    // -1     (Basic math equation) Type = Number  
+            console.log("Bob" - "bill")         // Nan    (undefined variable)
+            //console.log(false)
+            console.log("--- PART 2 ---")
+            console.log(5 >= 1)                 // true
+            console.log(4 <= 1)                 // false
+            console.log(1 != 1)                 // false
+            console.log("A" > "B")              // false (It is the same letters in capital)
+            console.log("B" < "C")              // true
+            console.log("a" > "A")              // true
+            console.log("b" < "A")              // false
+            console.log(true != true)           // false 
 
+            console.log("----- PART 3 ----")
+            console.log(0 == false)             // true (== directly related to the variable)
+            console.log(0 === false)            // true (=== is not directly related to the variale)
+            console.log(2 == "2")               // true
+            console.log(2 === "2")              // false
+            // console.log(10 = 10)             // will show an error (Assignment error)
             //TODO: evaluate the remaining expressions on the slides 
         }
+
+
+
 	</script>
 </body>
 </html>

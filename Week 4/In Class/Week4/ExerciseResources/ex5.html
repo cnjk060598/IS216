@@ -8,6 +8,17 @@
 	<script>
 		var str = prompt("If you provide a string, I will tell you if it is a Palindrome!"); 
        // TODO: add your code here
+		str = str.toLowerCase()
+
+		console.log(str)
+
+		let str2 = str.split("").reverse().join("")
+		
+		if(str  == str2){
+			alert(str + "is a Palindrome")
+		} else {
+			alert(str + " is not a Palindrome")
+		}
 
 	</script>
 </body>

@@ -1,0 +1,15 @@
+        
+LAB TEST Questions: 
+        
+1. What is the total width? - take everything and add it horizontally */
+2. What is the total height? - take everything and add it vertically */
+
+
+
+        Container   (Container-sm)
+    xs  < 576px        100%
+    sm  >= 576px       540px
+    md  >= 768px       720px
+    lg  >= 960px       960px
+    xl  >= 1200px      1140px
+    xxl >= 1400px      1320px

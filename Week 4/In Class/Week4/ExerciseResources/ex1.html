@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>JavaScript</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 </head>
 <body>
 
@@ -11,8 +12,29 @@
         //TODO: type the program on the slide here; and output the value of newperson.firstName and newcars[0]
         //use: console.log(x) to display x in the console (Chrome --> Developer Tools --> Console)
 
-		
+		let cars = ["Saab", "Volvo", "BMW"]
+		let new_cars = cars
+		let person = {firstName: "Lance", lastName: "Foo", age: 30}
+		let new_person = person 
+
+		person.firstName = "Prince"
+		cars[0] = "Honda"
+
+		console.log(new_person.firstName);
+		console.log(new_cars[0]);
+
+		let y = 50 / "10"
+		console.log(y) // 5 is purple color, is it an auto correct? 
+		console.log(typeof(y))
+
+		console.log("---" + typeof(NaN)) // Type of NaN is a number type 
+
+		let x = 123
+		x.toString()
+		console.log(x)
+	
 
 	</script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
 </body>
 </html>

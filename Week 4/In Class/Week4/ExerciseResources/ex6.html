@@ -7,16 +7,38 @@
 
 	<script>
         /*
-        TODO: define a function named apply which takes two parameters: a function and an array;
-        applies the given function to each element in the given array one by one; 
-        and return the result as a new array.
+                TODO: define a function named apply which takes two parameters: a function and an array;
+                applies the given function to each element in the given array one by one; 
+                and return the result as a new array.
 
-        Example: 
+                Example: 
 
-        function incr(x) { return 2*x; }
-        apply(incr, [1,2,3]); //result: [2,4,6]
-        apply(Number, ["string", 5, this, NaN]) //result: [NaN, 5, NaN, NaN]
+                function incr(x) { return 2*x; }
+                apply(incr, [1,2,3]); //result: [2,4,6]
+                apply(Number, ["string", 5, this, NaN]) //result: [NaN, 5, NaN, NaN]
         */
+
+        function incre(x){
+                return 2*x
+        }
+
+        function apply(func, my_list){
+                let result = []
+                for(x in my_list){
+                        if(isNaN(x)){
+                                result.push(NaN)
+                        } else (
+                                result.push(incre(x))
+                        )
+                }
+                return result
+        }       
+
+
+        let final = apply(incre,["string", 5, this, NaN])
+        console.log(final)
+
+
 
 	</script>
 </body>

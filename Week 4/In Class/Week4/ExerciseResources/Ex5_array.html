@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Looping Over Array Elements </title>
+</head>
+<body>
+    
+    <h1>Looping over Arrays</h1>
+
+	<script>
+		
+		let schools = ["SOSS", "SCIS", "SOE ", "SOL"];
+		let len = schools.length
+
+		schoolList = "<ul>";
+		for(i = 0; i < len; i++){
+			schoolList += "<li>" + schools[i] + "</li>";
+		}
+		schoolList += "</ul>";
+		console.log(schoolList)
+	</script>
+</body>
+</html>

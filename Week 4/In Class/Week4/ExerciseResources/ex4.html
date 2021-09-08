@@ -17,8 +17,45 @@
         ]
 
         // TODO: loop throuh the array and print (on the console) "the chosen one"'s name and age
-       
-    
+       /*
+        let test = [0,1,2,3,4,5]
+        
+        for (x in test){
+            console.log(x)
+        }
+        */
+
+        for(person in persons){
+            console.log(person)
+            //console.log(persons[person])
+            let testing  = persons[person]
+            console.log(testing)
+
+            if(testing.name == "The Chosen One"){
+                console.log(testing.name + " " +  testing.age)
+            }
+
+        }
+
+        console.log("---- String operations ----")
+
+        let txt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        console.log(txt.length)     // Return 26, Type: Number
+
+        let x = "Please locate 'where' 'locate' occurs!"
+        console.log(x.indexOf("locate"))       
+        // returns the index 7, if non-existent, it will return -1, finds the first letter of the word and returns the index
+
+        console.log("--- Operation REPLACE ---")
+
+        let z = "IS216 is an awesome IS course!";
+        let y = z.replace("IS216", "CS123")
+        console.log(y)
+
+        console.log("--- operation ")
+
+
+
 	</script>
 </body>
 </html>
