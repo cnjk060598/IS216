@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JavaScript</title>
+</head>
+<body>
+
+	<p id="P1">Objects are references</p>
+
+	<script>
+		var cars = ["Saab", "Volvo", "BMW"];
+		var newcars = cars;
+		var person = {firstName: "Lance", lastName: "Foo", age: 30};
+		var newperson = person;
+
+		person.firstName = "Prince";
+		cars[0] = "Honda";
+
+		console.log(newperson.firstName);
+		console.log(newcars[0]);
+	</script>
+</body>
+</html>

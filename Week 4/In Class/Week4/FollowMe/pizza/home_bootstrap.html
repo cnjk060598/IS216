@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <title>Document</title>
+
+    <!--
+        For your easy reference:
+
+        Background
+        https://getbootstrap.com/docs/5.1/utilities/background/
+
+        Border
+        https://getbootstrap.com/docs/5.1/utilities/borders/
+
+        Margin
+        https://getbootstrap.com/docs/5.1/utilities/spacing/
+            mt-3 (margin-top)
+            1   0.25 of spacer (16px), 4px
+            2   0.5 of spacer (16px), 8px
+            3   1.0 of spacer (16px), 16px
+            5   3.0 of spacer (16px), 48px
+
+        Container
+        https://getbootstrap.com/docs/5.1/layout/containers/
+
+        Grid
+        https://getbootstrap.com/docs/5.1/layout/grid/
+
+        Text
+        https://getbootstrap.com/docs/5.1/utilities/text/
+
+        Spacing
+        https://getbootstrap.com/docs/5.1/utilities/spacing/
+
+        Colored Links
+        https://getbootstrap.com/docs/5.1/helpers/colored-links/
+
+        Heading
+        https://getbootstrap.com/docs/5.0/content/typography/#headings
+    -->
+    
+</head>
+<body>
+
+    <div id="top-box" class="container-fluid">
+
+        <div class="row bg-danger p-2 align-items-center">
+
+            <div class="col-sm-2">
+                <img id="logo" src="images/pizza_logo.png" style="width: 100%">
+            </div>
+
+            <div class="col-sm-10 text-center">
+                <a style="text-decoration: none" class="link-light" href="https://www.papajohns.com/">
+                    <span class="fs-4">Order</span>
+                </a>
+
+                <span class="text-light"> | </span>
+                
+                <a style="text-decoration: none" class="link-light" href="https://www.facebook.com/papajohnsus/">
+                    <span class="fs-4">Facebook</span>
+                </a>
+
+                <span class="text-light"> | </span>
+
+                <a style="text-decoration: none" class="link-light" href="https://twitter.com/papajohns">
+                    <span class="fs-4">Twitter</span>
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div id="middle-box" class="container-fluid">
+
+        <div class="row p-2 align-items-center">
+
+            <div class="col-sm-6 p-4">
+                <h2 class="fw-bold">
+                    America's Favorite Pizza
+                </h2>
+                <span class="m-3"></span>
+                <h3>
+                    Papa John's is an American pizza restaurant franchise. It is the fourth largest pizza delivery restaurant chain in the United States with headquarters in Jeffersontown, Kentucky, a suburb of Louisville.
+                </h3>
+            </div>
+
+            <div class="col-sm-6 p-4">
+                <img id="logo" src="images/pizza_pepperoni.jpeg" style="width: 100%">
+            </div>
+
+        </div>
+
+    </div>
+
+    <div id="bottom-box" class="container-fluid bg-success p-3">
+
+        <div id="bottom-button-box">
+
+            <button class="btn btn-secondary" type="button" data-bs-toggle="collapse" 
+                    data-bs-target="#history" aria-expanded="false" aria-controls="collapseExample">
+                <h5>History</h5>
+            </button>
+
+            <button class="btn btn-secondary" type="button" data-bs-toggle="collapse" 
+                    data-bs-target="#operations" aria-expanded="false" aria-controls="collapseExample">
+                <h5>Operations</h5>
+            </button>
+
+            <button class="btn btn-secondary" type="button" data-bs-toggle="collapse" 
+                    data-bs-target="#mediacoverage" aria-expanded="false" aria-controls="collapseExample">
+                <h5>Media Coverage</h5>
+            </button>
+        </div>
+        
+        <div class="p-1">
+
+        </div>
+
+        <div id="bottom-text-box">
+            <!-- 1st text-->
+            <div class="collapse" id="history">
+                <div class="card card-body">
+                    The Papa John's restaurant was founded in 1984 when "Papa" John Schnatter knocked out a broom closet in the back of his father's tavern, Mick's Lounge, in Jeffersonville, Indiana. He then sold his 1971 Camaro Z28 to purchase US$1,600 worth of used pizza equipment and began selling pizzas to the tavern's customers out of the converted closet. His pizzas proved sufficiently popular that a year later he moved into an adjoining space. Dipping sauce specifically for pizza was invented by Papa John's Pizza that same year, and has since become popular when eating pizza, especially the crust. The company went public in 1993. A year later it had 500 stores, and by 1997 it had opened 1,500 stores. In 2009, Schnatter reacquired the Camaro back after offering a reward of $250,000 for the car.
+                </div>
+            </div>
+
+             <!-- 2nd text-->
+             <div class="collapse" id="operations">
+                <div class="card card-body">
+                    Papa John's has over 5,199 establishments — 4,456 franchised restaurants operating domestically in all 50 states and in 44 countries and territories. Papa John's operates 246 "company owned stores" under joint ventures and 35 units in Beijing and North China. In September 2012 the 4,000th Papa John's Pizza restaurant opened, in New Hyde Park, New York. The company celebrated the event by giving away 4,000 free pizzas to customers throughout New York City.
+                </div>
+            </div>
+
+             <!-- 3rd text-->
+             <div class="collapse" id="mediacoverage">
+                <div class="card card-body">
+                    Papa John's received attention in May 2008 when a Washington, D.C. franchise distributed T-shirts making fun of Cleveland Cavaliers star player LeBron James at a playoff game against the Washington Wizards. Photographs of the shirts quickly spread from the Internet to Cleveland television. Increasing awareness of the controversy prompted an apology from the Papa John's national headquarters on May 5. To apologize, Papa John's offered large single-topping pizzas for 23 cents (matching James' jersey number) at all locations in Greater Cleveland and throughout northern Ohio. The chain sold over 172,000 pizzas at 23 cents a piece, with customers waiting in lines outside of some stores for as long as three hours.
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
+</body>
+</html>
