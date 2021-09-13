@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<title> JS Part 2 - Accessing HTML (Forms)</title>
+
+<style>
+    div {
+        width: 80px;
+        border: 5px solid pink;
+        margin: auto;
+        margin-top: 20px;
+    }
+
+</style>
+
+</head>
+
+<body> 
+
+    <form name="some_form" id="love_form" action="#">
+
+        <label>Fullname</label>
+        <input type="text" name="fullname">
+
+        <br> 
+
+        <label>Country</label>
+        <input type="text" name="country">
+
+        <br>
+
+        <label>Love Letter </label>
+        <textarea name="letter"></textarea>
+
+        <br>
+
+        <input type="submit" value="send my love">
+
+    </form>
+
+
+    <!--Java Script below-->
+
+    <script>
+        console.log("==== Method 1 ====")
+        var some_form = document.forms["some_form"]; //returns the form element 
+        console.log(some_form);
+
+        console.log("==== Method 2 ====")
+        var love_form = document.getElementById("love_form");
+
+        console.log("=== What is inside the form? ===")
+        // form is a collection of element objects
+
+        for(i=0; i< love_form.length; i++){
+            console.log(love_form[i])
+        }
+        
+
+
+    </script>
+
+ 
+
+</body>
+
+
+
+
+</html>

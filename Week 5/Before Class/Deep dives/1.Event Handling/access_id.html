@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>
+        Javascript part 2 - accessing html (ID)
+    </title>
+
+    <style>
+        div{
+            width: 80%;
+            border: 5px solid pink;
+            margin: auto;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <p id="justin">
+        Hello Justin 
+    </p>
+
+    <p id="selena">
+        Hello <span style="color: blue;">Selena</span>
+    </p>
+
+    <div>
+        <p id="demi">
+            Hello <span style="color: red;">Demi</span>
+        </p>
+    </div>
+
+    <!----My JS code goes below-->
+    <script>
+        var justin = document.getElementById("justin"); // returns element object if found
+        var selena = document.getElementById("selena");
+        var demi = document.getElementById("demi");
+
+        console.log(justin)
+        console.log(selena)
+        console.log(demi)
+
+
+        //Question? Why do we not write the JS code at the top under <head> </head>
+            // It will return Null, because the HTML has not reached the id="justin". Web browser reads HTML codes from top to bottom
+
+        // Justin 
+        console.log("----- Node's Inner HTML ----")
+        console.log(justin.innerHTML)
+
+        console.log("----- Node's Inner Text ")
+        console.log(justin.innerText)
+
+        // what is the difference? 
+            // Inner HTML has white spaces in the front of the text, Inner text does not have the white spacing
+            // Innertext will return the content of the tag as plaintext as render by the web browser
+
+
+        // Selena 
+        console.log("----- Node's Inner HTML ----")
+        console.log(selena.innerHTML)
+
+        console.log("----- Node's Inner Text ")
+        console.log(selena.innerText)
+
+        // Inner html will return you the full html code , perservees the white spaces and inner HTML elements 
+        
+    </script>
+
+
+</body>
+
+
+</html>

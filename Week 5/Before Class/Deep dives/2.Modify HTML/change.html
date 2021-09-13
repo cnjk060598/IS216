@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>
+        Javascript (Part 2) - Changing HTML (existing element)
+    </title>
+
+</head>
+
+<body>
+
+    <h1 id="greet" style="color: green;"> Hi! This is the original greeting!</h1>
+
+    <button onclick="change_greeting()"">
+        Change <b>h1</b> text
+    </button>
+
+    <br><br>
+
+    <button onclick="reset_greeting()"">
+        Reset <b>h1</b> text
+    </button>
+
+    <br><br>
+
+    <button onclick="change_greeting_color()">
+        change <b>h1</b> color
+    </button>
+    
+    <br><br>
+
+    
+    <button onclick="reset_greeting_color()">
+        reset <b>h1</b> color
+    </button>
+
+
+    <hr> 
+
+    <p>
+        <a id="mylink" href="http://cnn.com" target="_blank"> GO to CNN </a>
+    </p>
+
+    <br><br>
+
+
+    <button onclick="change_link_method_1()">
+        Change Anchor Tag <b>href</b> and <b>text</b> Method 2
+    </button>
+
+    <hr>
+
+    <div id="main" style="color:purple"> 
+        <h2> I am a purple h2 heading inside div </h2>
+    </div>
+
+    <button onclick="change_div_innerHTML()">
+        Change <b>div</b>'s <b> innerHTML </b>
+    </button>
+
+
+    <hr>
+
+
+
+
+
+
+    <script>
+        function change_greeting(){
+            var node = document.getElementById('greet');
+            node.innerText = "Hello! This is a new greeting message."
+        }
+
+        function reset_greeting(){
+            var node = document.getElementById('greet');
+            node.innerText = " Hi! This is the original greeting!"
+        }
+
+        function change_greeting_color(){
+            document.getElementById("greet").style.color="red";
+        }
+
+
+        function reset_greeting_color(){
+            document.getElementById("greet").style.color="green";
+        }
+
+        // Change href link
+
+        function change_link_method_1(){
+            var new_url = prompt("Enter new full URL");
+            var new_text = prompt("Enter link text");
+
+            var node = document.getElementById("mylink")
+            node.innerText = new_text
+            node.getAttributeNode("href").value = new_url
+        }
+
+        // Modifying Element's inner HTML 
+
+        function change_div_innerHTML(){
+            var node = document.getElementById("main");
+            node.innerHTML = "<h2 style='color: red> I am a purple h2 heading inside div </h2>"
+        }
+
+    </script>
+
+</body>
+
+
+
+
+
+
+
+</html>

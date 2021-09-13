@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<title> JS Part 3 - Accessing HTML (CLASS)</title>
+
+<style>
+    .korean {
+        width: 70%;
+        border: 5px solid blue;
+        margin: auto;
+        margin-top: 20px;
+    }
+
+    .japanese {
+        margin: auto;
+        margin-top: 15px;
+        border: 3px solid green;
+    }
+</style>
+
+</head>
+
+<body> 
+
+    <h1 class="korean">
+        Want some Korean Food? Lets go to Tanjong Pagar
+    </h1>
+
+    <p class="korean">
+        Korean Food is sooo yummy. Umm Umm late night ramen with Kimchi
+    </p>
+
+    <div class="korean">
+        <p>
+            KBBQ tonight
+        </p>
+    </div>
+
+    <div class="japanese">
+        <div>
+            <p class="korean">
+                Japanese-Korean Fusion YUMMY
+            </p>
+        </div>
+    </div>
+
+
+
+
+    <!--Java Script below-->
+    <script>
+
+        console.log("====Class 'Korean' ====")
+        var nodes = document.getElementsByClassName("korean") //NodeList Objects
+        //console.log(nodes)
+
+        //loop through and show attributes
+        var counter = 0; 
+        for(node of nodes){ 
+            counter ++;
+
+            console.log("### Node (" + counter + ") ###")
+            console.log(node)
+
+            console.log("##### Node's Inner HTML ######")
+            console.log(node.innerHTML)
+
+            console.log("##### Node's InnerText #####")
+            console.log(node.innerText)
+        }
+
+
+
+    </script>
+
+
+</body>
+
+
+
+
+</html>

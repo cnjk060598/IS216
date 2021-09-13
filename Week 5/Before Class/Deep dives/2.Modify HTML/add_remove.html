@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>
+        Javascript (Part 2) - Changing HTML (add / delete elements)
+    </title>
+
+</head>
+
+<body>
+
+    <div id="main" style="width: 300px; border: 5px solid pink;">
+        <p id="para1"> 1st Paragraph</p>
+        <p id="para2"> 2nd paragraph</p>
+    </div>
+
+    <hr>
+
+    <button onclick="add_para()">
+        add a <b> new paragraph </b> at the end
+    </button>
+
+
+    <script>
+        function add_para(){
+            var text = prompt("Enter a new paragraph");
+
+            var para = document.createElement("p");
+            var node = document.createTextNode(text); // text node
+            para.appendChild(node);
+
+            document.getElementById("main").appendChild(para);
+        }
+
+    </script>
+
+</body>
+
+
+
+
+
+
+
+</html>
