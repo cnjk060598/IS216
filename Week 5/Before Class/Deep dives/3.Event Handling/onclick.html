@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title> Javascript Part 2 - Event Handling </title>
+</head>
+
+<body> 
+    <!---Add an onclick event-->
+    <img src="./0ba26ba7-5b74-4479-955f-ed27482793c8.jpg">
+
+    <p id="message" onclick="foo()">
+
+    </p>
+
+    <script>
+        function foo(){
+            var message = prompt("Enter a greeting message")
+            document.getElementById("message").innerText = message
+        }
+    </script>
+
+</body>
+
+
+</html>

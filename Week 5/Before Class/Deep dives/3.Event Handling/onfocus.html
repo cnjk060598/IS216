@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title> Javascript Part 2 - Event Handling </title>
+</head>
+
+<body> 
+    
+    <form name="some_form">
+        Enter your country:
+        <input type="text" name="country">
+
+        <br>
+
+        Enter your name:
+        <input type='text' name="name" onfocus="kungfu(this)">
+        <!--This refers to the 'name' input element--->
+
+    </form>
+
+
+    <script>
+         function kungfu(obj){
+             obj.style.background = 'yellow'
+         }
+
+
+    </script>
+
+</body>
+
+
+</html>

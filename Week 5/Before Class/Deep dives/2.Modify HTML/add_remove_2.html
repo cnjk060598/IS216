@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>
+        Javascript (Part 2) - Changing HTML (add / delete elements) Part 2
+    </title>
+
+</head>
+
+<body>
+
+    <ul id="stars">
+        <li>Kelvin</li>
+        <li>Hugh</li>
+    </ul>
+
+    <hr>
+
+    <br><br>
+
+    <button onclick="add_star()">
+        Add a <b> new star </b> to a list (At the end)
+    </button>
+    
+    
+    <br><br>
+
+    <button onclick="add_star_top()">
+        Add a <b> new star </b> to a list (At the top)
+    </button>
+
+    <br><br>
+
+    <button onclick="remove_star_bottom()">
+        Remove the <b> last item </b> from the list
+    </button>
+
+    <br><br>
+
+    <button onclick="remove_star_top()">
+        Remove the <b> first item </b> from the list
+    </button>
+
+
+    <script>
+        function add_star(){
+            var text = prompt("Enter a new star");
+
+            var list = document.createElement("li");
+            var node = document.createTextNode(text);
+            list.appendChild(node);
+
+
+            document.getElementById("stars").appendChild(list)
+        }
+
+        function add_star_top(){
+            var text = prompt("Enter a new star");
+
+            var list = document.createElement("li");
+            var node = document.createTextNode(text);
+            list.appendChild(node);
+
+            var stars_list = document.getElementById("stars")
+            stars_list.insertBefore(list, stars_list.childNodes[0]);
+        }
+
+        function remove_star_bottom(){
+            var stars_list = document.getElementById("stars");
+            stars_list.removeChild(stars_list.lastElementChild)
+        }
+
+        function remove_star_top(){
+            var star_list = document.getElementById("stars")
+            star_list.children[0].remove();
+        }
+
+        function remove_list(){
+            document.getElementById("stars").remove();
+        }
+
+
+
+    </script>
+
+
+</body>
+
+
+
+</html>
