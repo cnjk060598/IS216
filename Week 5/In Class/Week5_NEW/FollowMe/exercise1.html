@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript (Part 2) - Exercise 1</title>
+    <style>
+        #party-box {
+            border: 2px solid blue;
+            padding: 20px;
+            display: flex;
+        }
+
+        #photo-box,
+        #button-box {
+            width: 100%;
+            text-align: center;
+            margin: auto 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="party-box">
+
+        <div id="photo-box">
+            <h1 id="message">
+                Girl
+            </h1>
+            <img id="photo" src="images/chloe.jpg">
+        </div>
+
+        <div id="button-box">
+
+            <button onclick="show_next_photo()">
+                Show Next Photo
+            </button>
+
+        </div>
+    </div>
+
+    <script>
+
+        //=====================================================
+        // Pair Programming - Activity 1
+        //    exercise1.html
+        //=====================================================
+
+        /*
+            INPUT
+                min     lower-bound number (Integer >= 0)
+                max     upper-bound number (Integer >= 0)
+
+            OUTPUT
+                min <=  new Integer  <  max
+
+            EXAMPLE
+                Given min (0) and max (5), this function will return an Integer value
+                such as 0, 1, 2, 3, 4
+        */
+        // DO NOT MODIFY THIS HELPER FUNCTION
+        function getRandomInt(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min) + min);
+        }
+
+
+        // DO NOT MODIFY THESE ARRAYS
+        let girl_array = ['images/chloe.jpg', 'images/emily.jpg', 'images/emma.jpg']
+        let boy_array = ['images/dwayne.jpg', 'images/hugh.jpg', 'images/kevin.jpg']
+
+
+        function show_next_photo() {
+
+            // YOUR CODE GOES HERE
+            let current_gender = document.getElementById("message").innerText;
+            if(current_gender == "Girl"){
+                let random_int = getRandomInt(0, 3);
+
+                document.getElementById("photo").src = boy_array[random_int];
+                document.getElementById("message").innerText = "Boy";
+
+            } else  {
+                let random_int = getRandomInt(0, 3);
+                document.getElementById("photo").src = girl_array[random_int];
+                document.getElementById("message").innerText = "Girl";
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>

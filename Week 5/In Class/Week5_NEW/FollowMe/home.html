@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript (Part 2) - Home</title>
+    <style>
+        #pet-box {
+            border: 2px solid blue;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 id="title">
+        Home Sweet Home
+    </h1>
+
+    <div id="subtitle" style="font-style: italic; font-size: 30px; background-color: aqua;">
+        <p>
+            There's no place like 127.0.0.1
+        </p>
+    </div>
+
+    <button onclick="change_title()"> <!--can also use on MouseOver-->
+        Click to Change Title
+    </button>
+
+    <br><br>
+
+    <button>
+        Click to Change Subtitle
+    </button>
+
+    <br><br>
+
+    <button>
+        Click to Change Subtitle's Background Color
+    </button>
+
+
+
+    <hr>
+
+    <p id="mama" class="parent female">
+        Mama
+    </p>
+
+    <p id="papa" class="parent male">
+        Papa
+    </p>
+
+    <div id="troublemaker">
+        <p id="oppa" class="child male gangster">
+            Oppa
+        </p>
+
+        <p id="nuna" class="child female ahlian">
+            Nuna
+        </p>
+
+        <p id="me" class="child female smart">
+            Me
+        </p>
+
+    </div>
+
+    <!--In class exercise -->
+    <div id="myman-box" style="background-color: pink; text-align: center;">
+        <img id='myman' src="./images/kevin.jpg" style="width: 200px;">
+    </div>
+    
+
+
+
+    <hr>
+
+    <div id="pet-box">
+        <p>Cat</p>
+        <p>Dog</p>
+        <p>Squirrel</p>
+        <p>Mouse</p>
+        <p>Elephant</p>
+    </div>
+
+    <br><br>
+    <button onclick="add_pet()">
+        Add a new pet
+    </button>
+
+    <br><br>
+    <button onclick="add_pet_top()">
+        Add a new pet at the top
+    </button>
+
+    <br><br>
+    <button>
+        Remove a pet
+    </button>
+
+
+    
+    <hr>
+
+    <h1 id="message" style="font-weight: bold;">
+            Welcome My Friend
+    </h1>
+
+    <script src="./js/home.js">
+
+      
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title> Javascript Part 2 - Event Handling </title>
+</head>
+
+<body> 
+    
+
+    <!--this refers to the current <div> element-->
+    <div onmouseover="mOver(this)" onmouseout="mOut(this)">
+        Mouse Over me
+
+    </div>
+
+
+    <script>
+
+        function m0ver(obj){
+            obj.innerHTML = "Hello Justin"
+        }
+
+        function mOut(obj){
+            obj.innerHTML = "Bye Justin"
+        }
+
+
+
+    </script>
+
+</body>
+
+
+</html>
