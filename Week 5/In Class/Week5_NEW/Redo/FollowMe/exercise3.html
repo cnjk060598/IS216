@@ -125,6 +125,33 @@
         function add_capital_column() {
             
             // YOUR CODE GOES HERE
+            // Put the country and cities into a dictionary
+            var dic = {}
+
+            let country_city = document.getElementById("country-table").children;
+            //console.log(country_city)
+
+            let thead = country_city[0]
+            let tbody = country_city[1].children
+
+            for(var i=0 ; i<tbody.length; i++){
+                
+                country = tbody[i].children[0].innerText
+                
+
+                city = tbody[i].children[1].innerText
+                
+                dic[country] = city
+                return; 
+            }
+
+            // Celebrity table 
+
+            
+
+
+
+
 
         }
 

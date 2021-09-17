@@ -99,6 +99,7 @@ function add_pet(){
     // 3) append textnode to <p> ... </p> 
 
     para.appendChild(node)
+    
     // 4) Append <p> monkey </p> to parent <div>
     let pet_box = document.getElementById("pet-box")
     pet_box.appendChild(pet_box) 

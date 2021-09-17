@@ -1,28 +1,67 @@
 <html>
-   <head>
-      <title>Event Handling</title>
-   </head>
-   <body>
-     
-      <h1>Shopping List</h1>
-      <p>Get it done today</p>
-      
-        <!-- add HTML code here -->
 
-      <ul>
-         <li>Notebook</li>
-         <li>Jello</li>
-         <li>Spinach</li>
-         <li>Rice</li>
-         <li>Birthday Cake</li>
-         <li>Candles</li>
-      </ul>
-      
-      <script>
-      
-        // add code here
+<head>
+   <title>Event Handling</title>
+</head>
 
-      </script>
- 
-   </body>
+<body>
+
+   <h1>Shopping List</h1>
+   <p>Get it done today</p>
+
+   <input id="input" type="text" name="item" placeholder="Enter Items"> <button onclick="add_items()"> Enter Items </button> <br>
+   <input id="remove_item" type="text" placeholder="Remove Items"> <button onclick="remove_item_button()">Remove</button>
+   
+   </button>
+
+   <!-- add HTML code here -->
+
+   <ul id="part_list">
+      <li>Notebook</li>
+      <li>Jello</li>
+      <li>Spinach</li>
+      <li>Rice</li>
+      <li>Birthday Cake</li>
+      <li>Candles</li>
+   </ul>
+
+   <script>
+
+      // add code here
+      function add_items() {
+
+         
+         let ul = document.getElementsByTagName("ul")[0]
+         let li = document.createElement("li")
+
+         let get_item = document.getElementById("input")
+      
+         let textnode = document.createTextNode(get_item.value)
+
+         li.appendChild(textnode)
+         ul.appendChild(li)
+
+
+      }
+
+      function remove_item_button(){
+
+         let remove_item = document.getElementById("remove_item").value
+   
+         //Getting the items from the Parent <ul> 
+         let party_list = document.getElementsByTagName("ul")[0].children
+         
+         for(i=0; i< party_list.length;i++){
+            //console.log(party_list[i].innerText)
+            item = party_list[i].innerText
+            if(item == remove_item){
+               party_list[i].remove()
+            }
+         }
+      }
+
+   </script>
+
+</body>
+
 </html>

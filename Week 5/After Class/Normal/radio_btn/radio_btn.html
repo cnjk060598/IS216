@@ -1,0 +1,76 @@
+<!-- 
+    Do NOT change any of the HTML and CSS code.
+    Only add Javascript code between the <script> tags
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Radio buttons</title>
+
+    <style>
+        .errors {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <form action="https://www.w3schools.com/JSREF/event_preventdefault.asp">
+        Gender 
+        <label>
+            <input type="radio" name="gender" value="Male">Male
+        </label>
+        <label>
+            <input type="radio" name="gender" value="Female">Female
+        </label>
+        <button id="testing" onclick="return doClick()">Button 1</button>
+        <button>Button 2</button>
+    </form>
+
+    <div class="errors">
+        <!-- All your messages are printed here. -->
+        
+    </div>
+
+    
+
+    <script>
+        // YOUR CODE GOES HERE: START
+
+        let radio_butttons = document.getElementsByName("gender")
+        let error = document.getElementsByClassName("errors")[0]
+        //console.log(error)
+        
+        function doClick(){
+            event.preventDefault(); // Prevents the page from going to another link
+            let results = "Please select a gender"
+            
+            
+            for(buttons of radio_butttons){
+                if(buttons.checked){
+                    results = "You have selected " + buttons.value
+                }
+            }
+
+            error.innerHTML = results;
+            
+            
+        }
+
+        
+        var button2 = document.getElementsByTagName("button")[1];
+        console.log(button2)
+        button2.addEventListener(button2, doClick)
+
+        
+        
+
+
+        
+
+        // YOUR CODE GOES HERE: END
+    </script>
+</body>
+</html>

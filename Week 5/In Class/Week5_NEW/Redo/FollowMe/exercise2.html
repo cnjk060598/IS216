@@ -115,9 +115,21 @@
 
             // If the user keyed in something
             if( remove_fruit_name ) {
-
                 // YOUR CODE GOES HERE
+                let lower_case_remove_fruit_name = remove_fruit_name.toLowerCase()
+                console.log(lower_case_remove_fruit_name)
 
+                let fruit_list = document.getElementById("fruits")
+                let children_of_fruit_list = fruit_list.children
+                let length_of_children_fruit_list = children_of_fruit_list.length
+                
+
+                for(i = 0; i < length_of_children_fruit_list; i++){
+                    let convert_fruits_to_lower_case = children_of_fruit_list[i].innerText.toLowerCase()
+                    if(lower_case_remove_fruit_name == convert_fruits_to_lower_case){
+                        children_of_fruit_list[i].remove()
+                    }
+                }
             }
             // If the user cancelled out or keyed in nothing (empty)
             else {
@@ -134,6 +146,12 @@
             if( remove_fruit_number ) {
 
                 // YOUR CODE GOES HERE
+                let fruit_list = document.getElementById("fruits")
+                console.log(fruit_list)
+                remove_fruit_number --
+                console.log(remove_fruit_number)
+
+                fruit_list.children[remove_fruit_number].remove()
 
             }
             // If the user cancelled out or keyed in nothing (empty)
@@ -148,3 +166,15 @@
     
 </body>
 </html>
+
+
+<!--
+    <ol id="fruits">
+        <li>Apple</li>
+        <li>Banana</li>
+        <li>Durian</li>
+        <li>Mango</li>
+        <li>Watermelon</li>
+    </ol>
+
+-->
