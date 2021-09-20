@@ -1,0 +1,9 @@
+API - Application Programming  Interface 
+
+The only way the computer system (client) can access the Warehouse IoT-enabled smart warehouse information 
+and data is through API.
+
+API controls who can access the system information and data
+
+API is a gateway between the company system, data and everyone else outside of the company 
+

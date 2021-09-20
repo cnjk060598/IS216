@@ -60,6 +60,15 @@ function getName() {
     name.innerHTML = "You entered: " + fName + " " + lName;
 }
 
+// Adding Event Listener #addEventListener()
+
+Step 1: Create your target 
+
+Step 2: Create addEventListener
+target.addEventListener(type, listener) https://www.w3schools.com/jsref/dom_obj_event.asp (Types of event listener) 
+
+Step 3: Creater your listener (Function) 
+
 
 
 
