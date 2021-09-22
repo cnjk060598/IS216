@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <!-- Bootstrap CSS, JS -->
+        <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        
+        <!-- Add Axios Library -->
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    </head>
+    <body>
+       <!-- add code here-->
+       <p>Type a name in the input field below:</p> <br> 
+       Name: <input type="text" id="name"> 
+
+       <p> Suggestion: <span id="txtHint"></span></p>
+
+       <!--Add eventlistener here for -->
+        <script>
+           // add code here
+           let nameElem = document.getElementById("name")
+           nameElem.addEventListener("keyup", showHint)
+
+           function showHint(){
+
+                /*var p = document.getElementById("txthint")
+                name_value = nameElem.value
+                p.innerText = name_value */
+                var query = event.target.value    // This will show whatever that is typed into the name field 
+                //console.log(query)
+
+                if(query == ""){
+                    document.getElementById("txtHint").innerText = ""
+                } else {
+                    var url = "getHint.php?query=" + query
+                    
+                    axios.get(url)
+                    .then(response => {
+                        console.log(response.data)
+                        document.getElementById("txtHint").innerHTML = response.data;
+                    })
+
+                    .catch(error => {
+                        console.log(error.message)
+                        document.getElementById("txtHint").innerHTML = error.message;
+                    }); 
+
+                }
+
+           }
+
+
+           
+        </script>
+      
+    </body>
+</html>

@@ -7,3 +7,32 @@ API controls who can access the system information and data
 
 API is a gateway between the company system, data and everyone else outside of the company 
 
+Front end web app and API app are de-coupled, Front end web app and API app and Database are hosted in 3 different locations (no single point of failure)
+(They are physically running in different server)
+
+
+When starting to code: 
+1)  console.log("**** [START] display_default() *****")
+2)  console.log("**** [END] display_default() *****")
+
+Skeleton will be given for axios calling API 
+
+
+    // 1) Complete the endpoint URL with gender appended as a parameter
+    let api_endpoint_url = "http://krazywoman.com/krazymatch/api/profile/random.php?g=" + gender
+    console.log(api_endpoint_url)
+
+    // 2) Use Axios to call API asynchronously
+    axios.get(api_endpoint_url)
+    .then(response => {
+
+        // a) Inspect the response.data
+        console.log(response.data)
+
+        // b) Populate today-pick-box with new info
+        // Feel FREE to create another function to do this work!
+        // You don't have to stuff ALL logics here in this function :D
+    })
+    .catch(error => {
+        console.log(error.message)
+    }) 
