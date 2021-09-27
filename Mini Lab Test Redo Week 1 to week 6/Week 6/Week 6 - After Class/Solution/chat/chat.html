@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Chat</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+    <div class='container'>
+        <div class='row'>
+            <div class='col'>
+                <table class='table'>
+                    <tbody id='tbody'></tbody>
+                </table>
+
+                <table class='table'>
+                    <tbody>
+                        <tr>
+                            <th scope='row' style='width: 100px'>Nickname</th>
+                            <td>
+                                <input id='nickname'>
+                                <span id='nickname-error' class="text-danger"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope='row'>Chat</th>
+                            <td class='font-italic'>
+                                <input id='text' class="w-75" type="text" maxlength='100'>
+                                <button id='btnSend' class='btn btn-primary'>SEND</button>
+
+                                <br>
+                                <span id='num-chars'>0</span> / 100
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p id='output'></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var nicknameInput = document.getElementById('nickname');
+        nicknameInput.addEventListener('keyup', checkNickname);
+
+        var textInput = document.getElementById('text');
+        textInput.addEventListener('keyup', doText);
+
+        var btnSend = document.getElementById('btnSend');
+        btnSend.addEventListener('click', doSend);
+
+        var numChars = document.getElementById('num-chars');
+
+        function htmlEntities(str) {
+            return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+        }
+
+        function process(nickname, text) {
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function () {
+                if (this.readyState == 4) {
+                    if (this.status == 200) {
+                        var obj = JSON.parse(this.responseText);
+
+                        let rows = '';
+                        for (msg of obj) {
+                            rows = '<tr>'
+                                + '<th scope="row">' + msg.who + '</th>'
+                                + '<td>' + htmlEntities(msg.text) + '</td>'
+                                + '</tr>' + rows;
+                        }
+                        document.getElementById('tbody').innerHTML = rows;
+
+                    } else {
+                        output.innerHTML = "Error: HTTP status=" + this.status;
+                    }
+                }
+            };
+
+            gotoURL = "server/chat.php";
+            if (typeof (text) !== 'undefined') {
+                gotoURL += "?nickname=" + encodeURIComponent(nickname)
+                    + "&text=" + encodeURIComponent(text);
+            }
+            xhr.open("GET", gotoURL, true);
+
+            xhr.send();
+        }
+
+
+        function checkNickname() {
+            nickname = nicknameInput.value;
+            let errorMsg = document.getElementById('nickname-error');
+            if (nickname.length < 3) {
+                errorMsg.innerText = "Must be at least 3 characters";
+            } else {
+                errorMsg.innerText = "";
+            }
+        }
+
+        function doText(event) {
+
+            if (event.code === 'Enter') {
+                doSend();
+            }
+            numChars.innerHTML = textInput.value.length;
+        }
+
+        function doSend() {
+            let nickname = nicknameInput.value;
+            process(nickname, textInput.value);
+            textInput.value = '';
+            numChars.innerHTML = 0;
+        }
+
+        nicknameInput.value = 'anonymous' + Math.floor(Math.random() * 100000);
+
+        process();
+        
+        // pull messages every 1 second
+        window.setInterval(process, 1000);
+    </script>
+
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

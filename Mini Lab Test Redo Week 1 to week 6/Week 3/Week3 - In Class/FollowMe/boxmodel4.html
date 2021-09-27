@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Model - Example</title>
+
+    <!-- Internal CSS styling -->
+    <style>
+
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .parent {
+            display: flex;
+        }
+        
+        .children {
+            float: left;
+            width: 100px;
+        }
+
+        .leftboy {
+            background-color: red;
+        }
+
+        .centerboy {
+            background-color: yellow;
+        }
+
+        .rightboy {
+            background-color: green;
+        }
+
+    </style>
+
+</head>
+<body>
+    
+    <div class="parent">
+        <div class="leftboy children">
+            Left Boy.
+        </div>
+    
+        <div class="centerboy children">
+            Center Boy.
+        </div>
+    
+        <div class="rightboy children">
+            Right Boy.
+        </div>
+    </div>
+    
+
+
+    <div>
+        <div class="leftboy children" style="width: 150px">
+            Left Boy.
+        </div>
+    
+        <div class="centerboy children" style="width: 150px">
+            Center Boy.
+        </div>
+    
+        <div class="rightboy children" style="width: 150px">
+            Right Boy.
+        </div>
+    </div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+/*
+-- Descendant Selector
+This styling applies to ALL <h1> tags under/below <div>
+*/
+/* div h1 {
+    color: blue;
+    background-color: pink;
+    font-style: italic;
+} */
+
+
+/*
+-- Child Selector
+Applies to all <h1> tags whose PARENT is <div>
+*/
+/* div > h1 {
+    color: blue;
+    background-color: pink;
+    font-style: italic;
+} */
+
+
+/*
+-- Descendant Selector
+All <p> tags inside 2nd <div> 
+*/
+/* .second p {
+    background-color: yellow;
+    color: red;
+    font-size: 20px;
+} */
+
+
+/*
+-- Child Selector
+Applies to all <p> tags whose PARENT is of 'second' class
+*/
+/* .second > p {
+    background-color: yellow;
+    color: red;
+    font-size: 20px;
+} */
