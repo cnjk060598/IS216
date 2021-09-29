@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Review - Question 3</title>
+
+    <!-- DO NOT REMOVE THE BELOW LINE -->
+    <script src="axios/axios.min.js"></script>
+
+    
+    <!-- DO NOT MODIFY THE BELOW INTERNAL CSS -->
+    <style>
+        .low {
+            background-color: green;
+            color: white;
+        }
+
+        .medium {
+            background-color: yellow;
+            color: black;
+        }
+
+        .high {
+            background-color: orange;
+            color: black
+        }
+
+        .lethal {
+            background-color: red;
+            color: white
+        }
+
+        h1 {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <!-- Header 
+         DO NOT MODIFY THIS HTML
+    -->
+    <div>
+        <h1>COVID-19 Count</h1>
+    </div>
+
+
+    <!-- COVID risk color is shown here 
+         DO NOT MODIFY the below <div>'s id and style.
+    -->
+    <div id="risk" style="width: 100px; height: 30px; margin: auto;">
+
+    </div>
+
+    <!-- COVID Statistics are shown here 
+         DO NOT MODIFY the below <div>'s id.
+    -->
+    <div id="stats">
+
+    </div>
+
+
+    
+
+
+    <!-- JavaScript below -->
+    <script>
+
+        // DO NOT MODIFY THE BELOW LINE
+        var input_country = prompt("Enter a country name (e.g. Singapore, USA, Brazil, etc.)")
+        
+        // DO NOT MODIFY THIS URL
+        var url = "covidapi/count.php"
+        axios.get(url)
+        .then(response => {
+            statistic = response.data.statistics
+            //console.log(statistic )
+            display_stats(response.data.statistics)
+        })
+        
+
+
+                
+
+        // YOUR CODE GOES HERE
+        // FEEL FREE TO WRITE YOUR OWN FUNCTIONS AS DEEMED NECESSARY
+
+        function display_stats(stats){
+            //console.log(stats)
+            for(const [key, value] of Object.entries(stats)){
+                //console.log(value)
+                for(const [country, statistic] of Object.entries(value)){
+                    if(country == input_country){
+                        country_stats = value[input_country]
+                        
+                        let active_cases = country_stats.active_cases
+                        let total_cases = country_stats.total_cases
+                        let total_deaths = country_stats.total_deaths
+                        let total_recovered = country_stats.total_recovered
+                        let population = country_stats.population
+
+                        let mortality_rate = total_deaths / total_cases
+                        console.log(mortality_rate)
+
+                        let parent = document.getElementById("stats")
+                        let ul = document.createElement("ul")
+
+                        if(mortality_rate < 0.01){
+                            parent.style = "border: 1px solid green; background-color: green;"
+                        } else if ( mortality_rate < 0.02){
+                            parent.style = "border: 1px solid green; background-color: yellow;"
+                        } else if (mortality_rate < 0.03){
+                            parent.style = "border: 1px solid green; background-color: orange;"
+                        } else {
+                            parent.style = "border: 1px solid green; background-color: red;"
+                        }
+
+                        parent.appendChild(ul)
+
+                        let li1 = document.createElement("li")
+                        let li2 = document.createElement("li")
+                        let li3 = document.createElement("li")
+                        let li4 = document.createElement("li")
+
+                        let country_text = document.createTextNode("Country: " + input_country)
+                        let total_cases_text = document.createTextNode("Total Case: " + total_cases)
+                        let total_deaths_text = document.createTextNode("Total Death: " + total_deaths)
+                        let mortality_rate_text = document.createTextNode("Mortality Rate: "+ mortality_rate)
+
+                        li1.appendChild(country_text)
+                        li2.appendChild(total_cases_text)
+                        li3.appendChild(total_deaths_text)
+                        li4.appendChild(mortality_rate_text)
+
+                        ul.appendChild(li1)
+                        ul.appendChild(li2)
+                        ul.appendChild(li3)
+                        ul.appendChild(li4)
+
+
+
+                        
+                    }
+                }
+            }
+        }
+
+
+        
+    </script>
+
+    
+</body>
+</html>

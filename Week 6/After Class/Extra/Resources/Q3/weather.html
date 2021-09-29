@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+    <title>Q3</title>
+  </head>
+  <body>
+
+    <div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <td rowspan="2">Date</td>
+                    <td rowspan="2">Forecast</td>
+                    <td colspan="2">Temperature</td>
+                    <td colspan="2">Humid</td>
+                    <td colspan="3">wind</td>
+                </tr>
+
+                <tr>
+
+                    <td>Low</td>
+                    <td>High</td>
+
+                    <td>Low</td>
+                    <td>High</td>
+
+                    <td>Direction</td>
+                    <td>Low</td>
+                    <td>High</td>
+                </tr>
+            </thead>
+
+            <tbody id="parent">
+
+                
+
+            </tbody>
+
+
+        </table>
+
+
+
+    </div>
+    
+    <script>
+        let end_point_url = "https://api.data.gov.sg/v1/environment/4-day-weather-forecast"
+        axios.get(end_point_url)
+        .then(response=>{
+            //console.log(response.data.items[0].forecasts)
+            let forecast_array = response.data.items[0].forecasts
+
+            for(i=0; i<forecast_array.length; i++){
+                date = forecast_array[i].date
+                forecasts = forecast_array[i].forecast
+                low_humidity = forecast_array[i].relative_humidity.low
+                high_humidity = forecast_array[i].relative_humidity.high
+
+                low_temp = forecast_array[i].temperature.low
+                high_temp = forecast_array[i].temperature.high
+
+                wind_direction = forecast_array[i].wind.direction
+                high_wind = forecast_array[i].wind.speed.high
+                low_wind = forecast_array[i].wind.speed.low
+
+                console.log(low_wind)
+
+                let tbody = document.getElementById("parent")
+
+                let row = tbody.insertRow(-1)
+                let date_row = row.insertCell(0).innerHTML = date
+                let forecast_row = row.insertCell(1).innerHTML = forecasts
+                let low_humidity_row = row.insertCell(2).innerHTML = low_humidity
+                let high_humidity_row = row.insertCell(3).innerHTML = high_humidity
+                let low_temp_row = row.insertCell(4).innerHTML  = low_temp
+                let high_temp_row = row.insertCell(5).innerHTML = high_temp
+                let wind_direction_row = row.insertCell(6).innerHTML = wind_direction
+                let low_wind_row = row.insertCell(7).innerHTML = low_wind
+                let high_wind_row = row.insertCell(8).innerHTML = high_wind
+
+            }
+        })
+    </script>
+  </body>
+</html>

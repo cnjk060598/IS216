@@ -1,0 +1,31 @@
+/* DO NOT MODIFY THE BELOW CSS STYLING */
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* YOU MAY MODIFY THIS */
+#grid {
+    border: 1px solid grey;
+}
+
+
+/* YOU MAY MODIFY THIS */
+#message {
+    font-size: 15px;
+}
+
+
+/* YOU MAY MODIFY THIS */
+#current-equation {
+    font-size: 20px;
+}
+
+
+/* YOU MAY MODIFY THIS */
+.key {
+    border: 1px solid blue;
+}
+
+
+/* YOU MAY ADD MORE CSS STYLING ANYWHERE IN THIS FILE */
+

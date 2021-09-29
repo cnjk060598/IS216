@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <title>Q3 Part 2</title>
+  </head>
+  <body>
+        <h1> 24 Hrs dated <span id="time"></span> </h1>
+        <h1>Weather Forecast: <span id="weather"></span> </h1>
+
+        <div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <td>Blank</td>
+                        <td>Low</td>
+                        <td>High</td>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Temperature</td>
+                        <td id="temp_low">Low</td>
+                        <td id="temp_high">High</td>
+                    </tr>
+                        
+                    <tr>
+                        <td>Humid</td>
+                        <td id="humid_low">Low</td>
+                        <td id="humid_high">High</td>
+                    </tr>
+
+                    <tr>
+                        <td>Wind Speed</td>
+                        <td id="wind_low">Low</td>
+                        <td id="wind_high">High</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!---Second table-->
+
+        <div>
+            <table class="table">
+                
+                <thead>
+                    <tr>
+                        <th>Start</th>
+                        <th>End</th>
+                        <th>North</th>
+                        <th>South</th>
+                        <th>East</th>
+                        <th>West</th>
+                        <th>Central</th>
+                    </tr>
+                </thead>
+
+                <tbody id="periods_table"> 
+
+                </tbody>
+
+            </table>
+        </div>
+
+        <script>
+            let end_point_url = "https://api.data.gov.sg/v1/environment/24-hour-weather-forecast"
+            axios.get(end_point_url)
+            .then(response=>{
+                //console.log(response)
+                let time = response.data.items[0].update_timestamp
+                console.log(time)
+                document.getElementById("time").innerText = time 
+
+                let weather_forecast = response.data.items[0].general.forecast
+                document.getElementById("weather").innerText = weather_forecast 
+
+                let high_temp = response.data.items[0].general.temperature.high
+                let low_temp = response.data.items[0].general.temperature.low 
+
+                document.getElementById("temp_low").innerText = low_temp
+                document.getElementById("temp_high").innerText = high_temp
+
+                let wind_high = response.data.items[0].general.wind.speed.high
+                let wind_low = response.data.items[0].general.wind.speed.low
+
+                document.getElementById("wind_low").innerText = wind_low
+                document.getElementById("wind_high").innerText = wind_high
+
+                let humid_high =  response.data.items[0].general.relative_humidity.high
+                let humid_low =  response.data.items[0].general.relative_humidity.low
+
+                document.getElementById("humid_low").innerText = humid_low
+                document.getElementById("humid_high").innerText = humid_high
+
+
+                let periods =  response.data.items[0].periods
+                //console.log(periods)
+
+                for(i=0; i<periods.length; i++){
+                    
+                    let start_time = periods[i].time.start
+                    let end_time = periods[i].time.end
+                    
+                    let north = periods[i].regions.north
+                    let south = periods[i].regions.south
+                    let east = periods[i].regions.east
+                    let west = periods[i].regions.west
+                    let central = periods[i].regions.central
+
+                    let table = document.getElementById("periods_table")
+
+                    var row = table.insertRow(-1)
+                    var start_row = row.insertCell(0)
+                    var end_row = row.insertCell(1)
+                    var north_row = row.insertCell(2)
+                    var south_row = row.insertCell(3)
+                    var east_row = row.insertCell(4)
+                    var west_row = row.insertCell(5)
+                    var central_row = row.insertCell(6)
+
+                    start_row.innerText = start_time
+                    end_row.innerText = end_time
+                    north_row.innerText = north
+                    south_row.innerText = south
+                    east_row.innerText = east
+                    west_row.innerText = west
+                    central_row.innerText = central
+
+
+                }
+
+
+            })
+
+        </script>
+  </body>
+</html>

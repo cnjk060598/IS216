@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Question 1</title>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+        <style>
+
+        </style>
+    </head>
+
+    <body onload="call_chat()">
+
+
+        <div>
+            <table class="table">
+                <tbody id="new_msg">
+
+                </tbody>
+            </table>
+
+
+
+            <table class="table" >
+                <tbody id="parent">
+
+                </tbody>
+
+                <tbody>
+                    <td>Nickname</td>
+                    <td>  <input type="text" name="nickname"> <span id="error_msg"></span> </td>
+                </tbody>
+
+                <tbody>
+                    <td>Chat</td>
+                    <td> <input type="text" name="chat"> <button onclick="populate_msg()">Send</button></td>
+                </tbody>
+            </table>
+        </div>
+
+
+        <script>
+
+            function call_chat(){
+                let api_endpoint = "http://localhost/wad2/IS216/Week%206/After%20Class/Extra/Resources/chat/server/chat.php"
+                axios.get(api_endpoint)
+                .then(response => {
+                    console.log(response.data)
+                    let good_day = response.data[2].text
+                    let system_name = response.data[2].who 
+
+                    let random_quote = response.data[1].text
+
+                    let welcome = response.data[0].text
+
+                    //document.getElementById("system_name").innerText = system_name
+                    //document.getElementById("good_day").innerHTML = good_day
+
+                    //document.getElementById("quote").innerText = random_quote
+
+                    let inner_html = ''
+                    for(let i =0; i< response.data.length; i++){
+                        let text = response.data[i].text
+                        let who = response.data[i].who 
+
+                        inner_html += 
+                        `
+                        <p> ${who} ${text} </p>
+                        <hr>
+                        `
+
+                        let tr = document.createElement("tr")
+                        let td1 = document.createElement("td")
+                        let td2 = document.createElement("td")
+                        
+                        let textnode1 = document.createTextNode(who)
+                        let textnode2 = document.createTextNode(text)
+
+                        td1.appendChild(textnode1)
+                        td2.appendChild(textnode2)
+
+                        let parent_div = document.getElementById("parent")
+                        parent_div.appendChild(tr)
+
+                        tr.appendChild(td1)
+                        tr.appendChild(td2)
+                    }
+
+                    //document.getElementById("system_msg").innerText = inner_html
+                    let nickname = generate_nickname()
+                    console.log(nickname)
+                    document.getElementsByName("nickname")[0].value = nickname
+                })
+                
+
+            }
+
+            function generate_nickname(){
+                let integer = Math.floor(Math.random() * 10)
+                //console.log(integer)
+                let nickname = "Annoymous" + integer
+                return nickname
+            }
+
+            let nickname = document.getElementsByName("nickname")[0]
+            nickname.addEventListener("input", check_nickname)
+
+            function check_nickname() {
+                let nickname_new = nickname.value
+                if(nickname_new.length < 3){
+                    document.getElementById("error_msg").innerText = "Must be at least 3 characters"
+                } else {
+                    document.getElementById("error_msg").innerText = " "
+                }
+
+            }
+
+            
+            //input_chat_msg.addEventListener("input", populate_msg)
+
+            function populate_msg(){
+                let input_chat_msg = document.getElementsByName("chat")[0]
+                let chat_msg = input_chat_msg.value
+                let nickname = document.getElementsByName("nickname")[0].value
+
+                let tr = document.createElement("tr")
+                let td1 = document.createElement("td")
+                let td2 = document.createElement("td")
+
+                let chat_input = document.createTextNode(chat_msg)
+                let nickname_input =  document.createTextNode(nickname)
+
+                td1.appendChild(nickname_input)
+                td2.appendChild(chat_input)
+
+                let parent_div = document.getElementById("new_msg")
+                parent_div.appendChild(tr)
+
+                tr.appendChild(td1)
+                tr.appendChild(td2)
+
+            }
+        </script>
+    </body>
+</html>
