@@ -13,40 +13,28 @@
 
 <body>
     <h1>Please select your login option</h1>
-    <!-- Add/modify code in the following to have a dropdown list 
-        which lets the user to select either to login with username or email -->
-    <div id="app"> 
-        <select v-model="login_type">
-            <option selected>Username login</option>
-            <option>Email login</option>
-        </select>
-        <div>
-            <label v-if="login_type==='username'">Username</label>
-            <input placeholder="Enter your username">
-        </div>
-    
-        <div>
-            <label v-else>Email</label>
-            <input placeholder="Enter your Email Address">
-    
-        </div>
+    <div id="app">
+      <select v-model = "loginType">
+        <option selected value="username">Username login</option>
+        <option>Email login</option>
+      </select>
+      <div v-if="loginType === 'username'">
+        <label>Username</label>
+        <input placeholder="Enter your username">
+      </div>
+      <div v-else>
+        <label>Email</label>
+        <input placeholder="Enter your email address">
+      </div>
     </div>
-
-          
     <script>
-        // add code here
-        Vue .createApp({
-            data(){
+        Vue.createApp( {
+            data() {
                 return {
-                    username: "Enter your Username",
-                    email: "Enter your email",
-                    login_type = "username",
+                    loginType: 'username'
                 }
             }
-        }).mount("#app")
-
-
+      }).mount('#app')  
     </script>
- 
 </body>
 </html>

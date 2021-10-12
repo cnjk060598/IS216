@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Blog</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+ 
+    <!-- directly using vue.js -->
+    <!-- for production version, use vue.min.js -->
+    <!-- we shall use development version, includes helpful console warnings -->
+    <!-- <script src="vue.js"></script> --> 
+
+    <!-- using CDN -->
+    <script src="https://unpkg.com/vue@next"></script>
+
+    <!-- Axios -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+</head>
+
+<body>
+    <div id="app">    
+        <h2> Blog Posts </h2> 
+        <table class="table m-2">
+            <tr><th>ID</th><th>Entry</th><th>Mood</th></tr>
+            <tr v-for="post in posts">
+                <td>{{post.id}}</td>
+                <td>{{post.entry}}</td>
+                <td>{{post.mood}}</td>
+            </tr>
+        </table>
+    </div>
+
+
+
+   
+    <script>
+        Vue.createApp({
+            data() {
+                return {
+                    posts: [] // array of post objects
+                }
+            },
+            created() { // created is a hook that executes as soon as Vue instance is created
+                axios.get('http://localhost/is216/REST/blog/getPosts.php')
+                .then(response => {
+                    // this gets the data, which is an array, and pass the data to Vue instance's posts property
+                    this.posts = response.data
+                })
+                .catch(error => {
+                    this.posts = [{ entry: 'There was an error: ' + error.message }]
+                })
+            }
+        }).mount('#app')
+    </script>
+
+</body>
+</html>
