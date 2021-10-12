@@ -125,7 +125,24 @@
         function add_capital_column() {
             
             // YOUR CODE GOES HERE
+            let dic = country_capital()
+            
+            
 
+        }
+
+        function country_capital(){
+            let dic = {} 
+            let tbody = document.getElementById("country-table").children[1]
+            //console.log(tbody)
+            for(i=0; i<tbody.children.length; i++){
+                let country = tbody.children[i].children[0].innerText 
+                let city = tbody.children[i].children[1].innerText 
+                //console.log(city)
+                dic[country] = city
+            }
+
+            return dic
         }
 
 

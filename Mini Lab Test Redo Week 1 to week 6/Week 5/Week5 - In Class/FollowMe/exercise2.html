@@ -117,6 +117,15 @@
             if( remove_fruit_name ) {
 
                 // YOUR CODE GOES HERE
+                let fruit_list = document.getElementById("fruits").children
+                //console.log(fruit_list)
+                for(i=0; i<fruit_list.length; i++){
+                    let fruit = fruit_list[i].innerText
+                    //console.log(fruit)
+                    if(remove_fruit_name == fruit){
+                        fruit_list[i].remove()
+                    }
+                }
 
             }
             // If the user cancelled out or keyed in nothing (empty)
@@ -134,6 +143,7 @@
             if( remove_fruit_number ) {
 
                 // YOUR CODE GOES HERE
+
 
             }
             // If the user cancelled out or keyed in nothing (empty)

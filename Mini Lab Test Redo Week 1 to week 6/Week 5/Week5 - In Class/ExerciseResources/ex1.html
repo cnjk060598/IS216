@@ -7,7 +7,7 @@
     
     <h2>Form Validation</h2>
 
-    <form name="form" action="." onsubmit="validateForm()" autocomplete="on" >
+    <form name="form" action="#" onsubmit="validateForm('form')" autocomplete="on" >
             ID: <input type="text" name="id" ><br>
             Age: <input type="number" name="age" ><br>
             Email: <input type="text" name="email" ><br>
@@ -16,10 +16,34 @@
         </form>
 
         <script>
-        
-            function validateForm() {
-                var x = document.getElementsByName("id");
-                console.log(x);
+            
+
+            function validateForm(fname) {
+                event.preventDefault();
+                let ID = document.getElementsByName("id")[0].value 
+                let age = document.getElementsByName("age")[0].value
+                let email = document.getElementsByName("email")[0].value  
+                let password = document.getElementsByName("password")[0].value 
+
+                let error_msg = ''
+
+                if(ID.length > 10){
+                    error_msg += "ID has a maximum length of 10 characters"
+                }
+
+                if(age < 10 || age > 40){
+                    error_msg += "Age must be between 10 and 40"
+                }
+
+                if(!email.includes("@")){
+                    error_msg += "Email must contain '@' "
+                }
+
+                if(password == ""){
+                    error_msg += "Password must not be empty"
+                }
+
+                alert(error_msg)
             }
      
          </script>

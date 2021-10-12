@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Review - Question 3</title>
+
+    <!-- DO NOT REMOVE THE BELOW LINE -->
+    <script src="axios/axios.min.js"></script>
+
+    
+    <!-- DO NOT MODIFY THE BELOW INTERNAL CSS -->
+    <style>
+        .low {
+            background-color: green;
+            color: white;
+        }
+
+        .medium {
+            background-color: yellow;
+            color: black;
+        }
+
+        .high {
+            background-color: orange;
+            color: black
+        }
+
+        .lethal {
+            background-color: red;
+            color: white
+        }
+
+        h1 {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <!-- Header 
+         DO NOT MODIFY THIS HTML
+    -->
+    <div>
+        <h1>COVID-19 Count</h1>
+    </div>
+
+
+    <!-- COVID risk color is shown here 
+         DO NOT MODIFY the below <div>'s id and style.
+    -->
+    <div id="risk" style="width: 100px; height: 30px; margin: auto;">
+
+    </div>
+
+    <!-- COVID Statistics are shown here 
+         DO NOT MODIFY the below <div>'s id.
+    -->
+    <div id="stats">
+
+    </div>
+
+
+    
+
+
+    <!-- JavaScript below -->
+    <script>
+
+        // DO NOT MODIFY THE BELOW LINE
+        //var input_country = prompt("Enter a country name (e.g. Singapore, USA, Brazil, etc.)")
+        let input_country = "Singapore"
+
+        // DO NOT MODIFY THIS URL
+        var url = "covidapi/count.php"
+        axios.get(url)
+        .then(response => {
+            let statistics = response.data.statistics
+            for(const [continent, countries] of Object.entries(statistics)){
+                //console.log(countries)
+                for(const [country, ind_stats] of Object.entries(countries)){
+                    if(country == input_country){
+                        let total_cases = ind_stats.total_cases
+                        let total_deaths = ind_stats.total_deaths
+                        let mortality_rate = total_deaths / total_cases
+                        
+                        populate_stats(total_cases, total_deaths, mortality_rate)
+                        color_index(mortality_rate)
+                    }
+                }
+            }
+        })
+
+        function populate_stats(total_cases, total_deaths, mortality_rate){
+            
+            let parent = document.getElementById("stats")
+            let ul = document.createElement("ul")
+            let li1 = document.createElement("li")
+            let li2 = document.createElement("li")
+            let li3 = document.createElement("li")
+
+            let li1_textnode = document.createTextNode("Total Cases: " + total_cases)
+            let li2_textnode = document.createTextNode("Total Deaths: " + total_deaths)
+            let li3_textnode = document.createTextNode("Mortality Rate: " + mortality_rate)
+
+            li1.appendChild(li1_textnode)
+            li2.appendChild(li2_textnode)
+            li3.appendChild(li3_textnode)
+
+            ul.appendChild(li1)
+            ul.appendChild(li2)
+            ul.appendChild(li3)
+
+            parent.appendChild(ul)
+        }
+
+        function color_index(mortality_rate){
+            console.log(mortality_rate)
+            let color = ''
+            if(mortality_rate < 0.01){
+                color = "green"
+            } else if (mortality_rate < 0.02){
+                color = "yellow"
+            } else if (mortality_rate < 0.03){
+                color = "orange"
+            } else {
+                color = "red"
+            }
+
+            document.getElementById("risk").style.backgroundColor = color
+        }  
+
+        
+
+
+                
+
+        // YOUR CODE GOES HERE
+        // FEEL FREE TO WRITE YOUR OWN FUNCTIONS AS DEEMED NECESSARY
+
+
+        
+    </script>
+
+    
+</body>
+</html>

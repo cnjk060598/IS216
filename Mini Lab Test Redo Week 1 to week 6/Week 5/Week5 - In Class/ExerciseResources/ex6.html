@@ -19,6 +19,21 @@
     <script>
         
         // add code here
+        let option = document.getElementById("select_item")
+        //console.log(option.value)
+        option.addEventListener("change", populate_list)
+
+        function populate_list(){
+            option_name = option.value
+            console.log(option_name)
+
+            let ul = document.getElementById("shopList")
+            let li = document.createElement("li")
+            let textnode = document.createTextNode(option_name)
+            li.appendChild(textnode)
+            ul.appendChild(li)
+            
+        }
     
     </script>
 

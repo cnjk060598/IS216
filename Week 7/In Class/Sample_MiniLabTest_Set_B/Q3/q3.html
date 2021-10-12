@@ -68,15 +68,60 @@
     <script>
 
         // DO NOT MODIFY THE BELOW LINE
-        var input_country = prompt("Enter a country name (e.g. Singapore, USA, Brazil, etc.)")
+        //var input_country = prompt("Enter a country name (e.g. Singapore, USA, Brazil, etc.)")
+        var input_country = "Singapore"
+        console.log(input_country)
         
         // DO NOT MODIFY THIS URL
         var url = "covidapi/count.php"
 
-                
-
         // YOUR CODE GOES HERE
         // FEEL FREE TO WRITE YOUR OWN FUNCTIONS AS DEEMED NECESSARY
+        axios.get(url)
+        .then(response => {
+            let statistics = response.data.statistics
+            console.log(statistics)
+            for(const [continent, countries] of Object.entries(statistics)){
+                //console.log(countries)
+                // Do another loop through the countries to get the individual country's statistics 
+                for(const [country, indv_stat] of Object.entries(countries)){
+                    if(country == input_country){
+                        let total_cases = indv_stat.total_cases
+                        let total_deaths = indv_stat.total_deaths
+                        let total_recovered = indv_stat.total_recovered
+                        let active_cases = indv_stat.active_cases
+                        let population = indv_stat.population
+                        let mortality_rate = total_deaths/population
+
+                        let parent = document.getElementById("stats")
+                        let ul = document.createElement("ul")
+                        parent.appendChild(ul)
+                        let li1 = document.createElement("li")
+                        let li2 = document.createElement("li")
+                        let li3 = document.createElement("li")
+                        let li4 = document.createElement("li")
+
+                        let textnode1 = document.createTextNode(input_country)
+                        let textnode2 = document.createTextNode(total_cases)
+                        let textnode3 = document.createTextNode(total_deaths)
+                        let textnode4 = document.createTextNode(mortality_rate)
+
+                        li1.appendChild(textnode1)
+                        li2.appendChild(textnode2)
+                        li3.appendChild(textnode3)
+                        li4.appendChild(textnode4)
+
+                        ul.appendChild(li1)
+                        ul.appendChild(li2)
+                        ul.appendChild(li3)
+                        ul.appendChild(li4)
+
+                        
+                    }
+                }
+            }
+
+        })
 
 
         

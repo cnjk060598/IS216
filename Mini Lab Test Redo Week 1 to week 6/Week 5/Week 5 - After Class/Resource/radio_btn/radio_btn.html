@@ -35,6 +35,28 @@
 
     <script>
         // YOUR CODE GOES HERE: START
+        function doClick(){
+            
+            let results = "Please Select a gender"
+
+            let genders = document.getElementsByName("gender")
+            for(gender of genders){
+                if(gender.checked == true){
+                    let value = gender.value
+                    console.log(value)
+                    results = "You have selected " + value
+                }
+            }
+
+            document.getElementsByClassName("errors")[0].innerHTML = results
+
+
+
+
+            event.preventDefault()
+
+        }
+
 
 
         

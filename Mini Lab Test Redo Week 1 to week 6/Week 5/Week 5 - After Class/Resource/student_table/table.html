@@ -23,7 +23,7 @@
       <label for="school">School</label>
       <input type="text" id="school" class="form-control">
     </div>
-    <button type="button" class="btn btn-primary">Insert</button>
+    <button type="button" class="btn btn-primary" onclick="insert()">Insert</button>
   </form>
 
     <table id="student-table" class="table table-dark m-2">
@@ -36,7 +36,26 @@
      
       function insert() {
         
-        // Add Code here
+        // get the form elements 
+        let texts = document.getElementsByTagName("input")
+        let name = texts[0].value
+        let email = texts[1].value
+        let school = texts[2].value
+
+        let tbody = document.getElementById("student-table").children[0]
+        console.log(tbody)
+
+        let row = tbody.insertRow(-1)
+        let name_cell = row.insertCell(0)
+        let email_cell = row.insertCell(1)
+        let school_cell = row.insertCell(2)
+
+        name_cell.innerHTML = name
+        email_cell.innerHTML = email
+        school_cell.innerHTML = school
+
+
+        
        
       }
     </script>

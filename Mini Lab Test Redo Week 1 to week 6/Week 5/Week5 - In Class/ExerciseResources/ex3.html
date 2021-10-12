@@ -8,6 +8,7 @@
       <p>Get it done today</p>
       
         <!-- add HTML code here -->
+        <input type="text" id="item"> <button onclick="populate_list()">Enter</button>
 
       <ul>
          <li>Notebook</li>
@@ -21,6 +22,19 @@
       <script>
       
         // add code here
+        function populate_list(){
+
+            let item = document.getElementById("item").value
+         
+            let ul = document.getElementsByTagName("ul")[0]
+            let li = document.createElement("li")
+            let textNode = document.createTextNode(item)
+            li.appendChild(textNode)
+            ul.appendChild(li)
+
+            console.log(event)
+            
+        }
 
       </script>
  

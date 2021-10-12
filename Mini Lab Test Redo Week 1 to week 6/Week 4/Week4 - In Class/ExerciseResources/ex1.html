@@ -1,18 +1,68 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>JavaScript</title>
 </head>
+
 <body>
 
 	<p id="P1">Objects are references</p>
 
 	<script>
-        //TODO: type the program on the slide here; and output the value of newperson.firstName and newcars[0]
-        //use: console.log(x) to display x in the console (Chrome --> Developer Tools --> Console)
+		//TODO: type the program on the slide here; and output the value of newperson.firstName and newcars[0]
+		//use: console.log(x) to display x in the console (Chrome --> Developer Tools --> Console)
+		var cars = ['Saab', 'Volvo', 'BMW']
+		var newcars = cars;
+		var person = { firstName: "Lance", lastName: "Foo", age: 30 };
+		//console.log(typeof(person))
 
+		/* 		for(const [key, value] of Object.entries(person)){
+					console.log(key)
+					console.log(value)
+				} */
+
+		/* 		for(i in person){
+					//console.log(i)
+					value = person[i]
+					console.log(value)
+				}
 		
+				console.log(typeof(cars))
+				for(i of cars){
+					console.log(i)
+				}
+		
+				let x = "a" 
+				console.log(isNaN(x)) */
+
+		/* 		for(i in cars){
+					console.log(i)
+					let elements = cars[i]
+					console.log(elements)
+				} */
+
+/* 		for (i = 0; i < cars.length; i++) {
+			car = cars[i]
+			console.log(car)
+		} */
+
+		function bike(){
+			console.log(this.name)
+		}
+		var name = "Ninja";
+		var obj1 = { name: "Pulsar", bike: bike };
+		var obj2 = { name: "Gixxer", bike: bike };
+		bike();
+		// what is
+		obj1.bike();
+		// what is
+		obj2.bike();
+// what is
+
+
 
 	</script>
 </body>
+
 </html>

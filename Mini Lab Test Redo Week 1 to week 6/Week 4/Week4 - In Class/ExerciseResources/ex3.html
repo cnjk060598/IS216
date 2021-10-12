@@ -14,6 +14,13 @@
 
 		//TODO: Use function alert() to display the sum of the two numbers
 		//TODO: Make your calculator as bullet-proof as possible.
+
+		if(isNaN(firstNumber) == true && isNaN(secondNumber) == true){
+			alert("Please key in a valid integer")
+		} else {
+			let total = Number(firstNumber) + Number(secondNumber)
+			alert(`The sum of ${firstNumber} and ${secondNumber} is ${total}`)
+		}
 	</script>
 </body>
 </html>

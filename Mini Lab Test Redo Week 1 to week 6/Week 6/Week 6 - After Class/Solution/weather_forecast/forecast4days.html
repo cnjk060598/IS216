@@ -125,6 +125,7 @@
 
         var gotoURL = "https://api.data.gov.sg/v1/environment/4-day-weather-forecast?date="
             + encodeURIComponent(nowDate);
+        console.log(gotoURL)
         xhr.open("GET", gotoURL, true);
         xhr.send();
 

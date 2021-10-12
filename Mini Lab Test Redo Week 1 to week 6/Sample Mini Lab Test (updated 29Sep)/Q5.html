@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    
+    <title>Document</title>
+</head>
+<body>
+    glossterm: <span style="color:blue" id="displayText1"></span><br>
+    para: <span style="color:blue" id="displayText2"></span><br>
+    <span style="color:red" id="displayErr"></span>
+
+    <script> 
+    
+    // TO DO: send an async request to url and extract the GlossTerm & para info from the JSON file that comes back
+
+    
+    url = "glossary.php";
+    axios.get(url)
+    .then(response => {
+        let glossterm = response.data.glossary.GlossDiv.GlossList.GlossEntry.GlossTerm
+        
+        //paragraph = response.data.glossary.GlossDiv.GlossList.GlossDef.para
+        //console.log(response.data.glossary.GlossDiv.GlossList.GlossEntry.GlossDef.para)
+        let paragraph = response.data.glossary.GlossDiv.GlossList.GlossEntry.GlossDef.para
+        
+        document.getElementById("displayText1").innerText = glossterm
+        document.getElementById("displayText2").innerText = paragraph
+        
+    })
+
+
+    
+
+
+    // TO DO: write Java Script statements here to set displayText1 and displayText2 above to GlossTerm and para dynamically extracted from jsonString.
+    // or set displayErr to "An error has occurred" if any error happens.
+
+</script>
+
+   
+</body>
+</html>

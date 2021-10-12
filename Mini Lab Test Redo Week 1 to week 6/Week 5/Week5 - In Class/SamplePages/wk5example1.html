@@ -4,23 +4,32 @@
     <title>Week 5 Example 1</title>
 </head>
 <body>
-  <h1>My header</h1>
+  <h1 id="header">My header</h1>
   <p id="time"></p>
   <!-- What do you think would happy if I un-comment the following? -->
   <p id="time"></p> 
     <button onclick= "document.getElementById('time').innerHTML= Date()">What time is it? </button>
+    
 
     <p class="hello">To be updated</p>
-    <p class="hello">To be updated</p>
+     
     <button onclick= "sayHello()">Say Hello </button>
     <script>
       function sayHello() {
         //be mindful that x is an array here
         var x = document.getElementsByClassName("hello");
+        //let testing = document.getElementsByTagName("p")
+        //console.log(testing)
+        //console.log(x[0].innerText)
+        
         for (ele of x) {
           ele.innerHTML = '<p style="background-color:tomato;">Hello~~~</p>';
         }
       }
+
+      document.getElementById("header").style.color = "blue"
+      document.getElementById("header").innerHTML = "<h1 id='header' style='color:'green''> My Header </h1> "
+      console.log(document.getElementById("header").innerHTML)
     </script>
 </body>
 </html>

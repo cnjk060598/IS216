@@ -32,7 +32,7 @@
 
         <div id="button-box">
 
-            <button>
+            <button onclick="show_next_photo()">
                 Show Next Photo
             </button>
 
@@ -74,10 +74,22 @@
         function show_next_photo() {
             
             // YOUR CODE GOES HERE
+            let current_gender = document.getElementById("message").innerText
+            console.log(current_gender)
+            if(current_gender == "Girl"){
+                let random = getRandomInt(0,4)
+                console.log(random)
+                document.getElementById("photo").src = boy_array[random]
+                document.getElementById("message").innerText = "Boy"
+            } else {
+                let random = getRandomInt(0,4)
+                document.getElementById("photo").src = girl_array[random]
+                document.getElementById("message").innerText = "Girl"
+            }
             
         }
 
-    </script>
+    </script>  
     
 </body>
 </html>

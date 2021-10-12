@@ -16,12 +16,18 @@
 
 <body>
 
+    <p class="display-5" style="margin-left: 50px;">Urban Dictionary Search</p>
+
+    <input type="text" class="form-control" id="keyword" style="margin-left: 50px;"> 
+    <button onclick="search_dictionary()" class="btn btn-primary">Search</button>
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
         crossorigin="anonymous"></script>
 
     <script>
+
         const options = {
             method: 'GET',
             url: 'https://mashape-community-urban-dictionary.p.rapidapi.com/define',
@@ -32,11 +38,15 @@
             }
         };
 
-        axios.request(options).then(function (response) {
-            console.log(response.data);
-        }).catch(function (error) {
-            console.error(error);
-        });
+        result = axios.request(options)
+        .then(response => {
+            search_dictionary(response.data)
+        })
+        
+
+        function search_dictionary(result){
+            console.log(result)
+        }
     </script>
 
 </body>

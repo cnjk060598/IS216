@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+    <title>Chat - Week 6</title>
+</head>
+
+<body>
+
+    <table class="table">
+        <tbody id="msg_table"> 
+
+        </tbody>
+    </table> 
+
+
+    <table class="table">
+        <tbody id="parent">
+
+
+        </tbody>
+
+        <tbody>
+            <tr>
+                <td>Nickname:</td>
+                <td><input type="text" id="nickname"> <span style="color: red;" id="error_msg"></span> </td>
+            </tr>
+
+            <tr>
+                <td>Chat</td>
+                <td> <input type="text" id="chat"> <button onclick="send()" class="btn btn-warning">Submit</button></td>
+            </tr>
+
+        </tbody>
+
+    </table>
+
+    <script>
+
+        let endpoint_url = "http://localhost/wad2/IS216/Mini%20Lab%20Test%20Redo%20Week%201%20to%20week%206/Week%206/Week%206%20-%20After%20Class/Resources/chat/server/chat.php"
+        axios.get(endpoint_url)
+            .then(response => {
+                let data_list = response.data
+                for (i = 0; i < data_list.length; i++) {
+                    let text = data_list[i].text
+                    let who = data_list[i].who
+                    console.log(text)
+
+                    let parent = document.getElementById("parent")
+
+                    let tr = document.createElement("tr")
+                    let td1 = document.createElement("td")
+                    let td2 = document.createElement("td")
+
+                    let text_node = document.createTextNode(text)
+                    let who_node = document.createTextNode(who)
+
+                    td1.appendChild(text_node)
+                    td2.appendChild(who_node)
+
+                    tr.appendChild(td2)
+                    tr.appendChild(td1)
+
+                    parent.appendChild(tr)
+                }
+            })
+
+    
+
+        function generate_nickname(){
+            let random_int = Math.floor((Math.random() * 10));
+            let generate_nickname = "Annoymous" + random_int
+            return generate_nickname
+
+        }
+        
+        // Generate nickname here 
+        let nickname = generate_nickname()
+        document.getElementById("nickname").value = nickname
+
+        // Add Even listener for nickname 
+        let input_nickname = document.getElementById("nickname")
+        input_nickname.addEventListener("input", check_nickname)
+
+        function check_nickname(){
+            let nickname = input_nickname.value
+            if(nickname.length <3){
+                document.getElementById("error_msg").innerText = "Must be at least 3 characters"
+            } else {
+                document.getElementById("error_msg").innerText = " "
+            }
+        }
+
+        function send(){
+            let nickname = document.getElementById("nickname").value
+            let chat_msg = document.getElementById("chat").value
+            console.log(chat_msg)
+
+            let parent = document.getElementById("msg_table")
+            let tr = document.createElement("tr")
+
+            let td1 = document.createElement("td")
+            let td2 = document.createElement("td")
+
+            let td1_textnode = document.createTextNode(nickname)
+            let td2_textnode = document.createTextNode(chat_msg)
+
+            td1.appendChild(td1_textnode)
+            td2.appendChild(td2_textnode)
+
+            tr.appendChild(td1)
+            tr.appendChild(td2)
+
+            parent.appendChild(tr)
+
+
+        }
+    </script>
+
+</body>
+
+</html>
