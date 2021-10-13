@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session 9 - Activity 3</title>
+
+    <!-- Vue.js 3 CDN -->
+    <script src="https://unpkg.com/vue@next"></script>
+
+    <!-- Internal CSS
+        YOU MUST USE THIS FOR YOUR SOLUTION -->
+    <style>
+        body {
+            font-size: 110%;
+        }
+
+        .red {
+            border: red solid 5px;
+        }
+
+        .green {
+            border: green solid 5px;
+        }
+    </style>
+    
+</head>
+<body>
+    
+    <div>
+        
+        <!-- header -->
+        <h1>Year 2 is Beautiful</h1>
+
+
+        <!-- User can key in full name 
+            You must modify the HTML below...
+            So that another HTML element can retrieve this value later on.
+            If the input field is empty, 'red' colored border will be drawn around it.
+            If the input field is not empty, 'green' colored border will be drawn around it.
+        -->
+        My fullname is:
+        <input type="text" size="30" name="fullname">
+        <br><br>     
+        
+        
+        <!-- User can select a gender 
+            You must modify the HTML below... to dynamically render input radio options.
+            You should not hardcode the options!!!
+            HINT: refer to Vue instance's data property 'gender_list'
+        -->
+        I am a:
+        <input type="radio" name="selected_gender" value="boy">Boy
+        <input type="radio" name="selected_gender" value="girl">Girl
+         
+
+        <!-- User can select multiple modules
+            You must modify the HTML below... to dynamically render input checkbox options.
+            You should not hardcode the options!!!
+            HINT: refer to Vue instance's data property 'module_list'
+        -->
+        <br><br>
+        The following modules stress me greatly:<br>
+        <input type="checkbox" name="selected_modules[]" value="BPAS"> BPAS
+        <input type="checkbox" name="selected_modules[]" value="IDP"> IDP
+        <input type="checkbox" name="selected_modules[]" value="WAD2"> WAD2
+        <input type="checkbox" name="selected_modules[]" value="CT"> CT
+
+
+        <!-- User can select multiple emotions
+            You must modify the HTML below... to dynamically render options.
+            You should not hardcode the options!!!
+            HINT: refer to Vue instance's data property 'emotion_list'
+        -->
+        <br><br>
+        Lately, I feel:
+        <select name="selected_emotions" multiple size="6">
+            <option value="sad">Sad</option>
+            <option value="devastated">Devastated</option>
+            <option value="hopeless">Hopeless</option>
+            <option value="suffocated">Suffocated</option>
+            <option value="numb">Numb</option>
+            <option value="crushed">Crushed</option>
+        </select>
+
+
+        <!-- User can select a country
+            You must modify the HTML below... to dynamically render options.
+            You should not hardcode the options!!!
+            HINT: refer to Vue instance's data property 'country_list'
+        -->
+        <br><br>
+        If I could get away from work now, my dream destination would be:
+        <select name="selected_country">
+            <option>Afghanistan</option>
+            <option>Colombia</option>
+            <option>Iraq</option>
+            <option>Libya</option>
+            <option>Mexico</option>
+            <option>North Korea</option>
+            <option>Syria</option>
+            <option>Yemen</option>
+        </select>
+
+
+        <!-- User can type a message in the text area 
+            You must modify the HTML below...
+            So that another HTML element can retrieve this value later on.
+        -->
+        <br><br>
+        What do you want to tell yourself - to cheer yourself up?<br>
+        <textarea name="message" rows="3" cols="50"></textarea>
+
+
+
+
+
+        
+        <!-- Letter -->
+        <hr>
+
+
+        <!--
+            Prefix and fullname must be dynamically rendered
+            (cannot be hard-coded)
+        -->
+        <p>Dear Mr. Michael Scott,</p>
+
+
+        <!--
+            Module(s) that the user selected must be dynamically rendered
+            (cannot be hard-coded)
+        -->
+        <p>
+            You've indicated that the following modules stress you greatly:
+            <ul>
+                <li>IDP</li>
+                <li>WAD2</li>
+            </ul>
+        </p>
+
+        <!--
+            Emotion(s) that the user selected must be dynamically rendered
+            (cannot be hard-coded)
+        -->
+        <p>
+            You feel 
+            <span style="font-size: 20px; color: red">sad, devastated, suffocated</span>
+            !!!
+        </p>
+
+
+        <!--
+            Country that the user selected must be dynamically rendered
+            (cannot be hard-coded)
+        -->
+        <p>
+            To help relieve your stress, we prepared a private jet to your dream destination:<br>
+            <span style="font-style: italic; font-weight: bold; color: green; font-size: 20px">
+                Yemen
+            </span>
+        </p>
+
+
+        <!--
+            Message that the user keyed in must be dynamically rendered
+            (cannot be hard-coded)
+        -->
+        <p>
+            Next time when you're stressed, tell yourself:<br>
+            <span style="font-style:italic; color: blue; font-size:20px">
+                Chill bro everything's gonna be alright
+            </span>
+        </p>
+
+
+    </div>
+
+
+
+
+
+    <script src="activity3.js"></script>
+
+</body>
+</html>
